@@ -1,49 +1,27 @@
-<!-- _includes/header.html -->
-<header class="sticky top-0 z-50 border-b border-gray-200 bg-white/90 backdrop-blur-md">
-  <nav class="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
-    <a
-      href="{{ '/' | relative_url }}"
-      class="text-xl font-bold text-[#2563EB]"
-      aria-label="Go to homepage"
-    >
-      DangLyPortfolio
+<header class="site-header" id="site-header">
+  <div class="site-header__inner">
+    <a class="site-header__logo" href="{{ '/' | relative_url }}">
+      <span class="site-header__logo-mark">PT</span>
+      <span class="site-header__logo-text">Phuong&nbsp;Thao</span>
     </a>
 
-    <div class="hidden md:flex space-x-8">
-      <a
-        href="{{ '/' | relative_url }}"
-        class="text-gray-600 hover:text-[#2563EB] transition-colors"
-      >
-        Home
-      </a>
+    <nav class="site-nav" id="site-nav" aria-label="Primary">
+      <ul class="site-nav__list">
+        {% for item in site.nav %}
+        <li>
+          <a href="{{ item.href | relative_url }}">{{ item.label }}</a>
+        </li>
+        {% endfor %}
+      </ul>
+    </nav>
 
-      <a
-        href="{{ '/#projects' | relative_url }}"
-        class="text-gray-600 hover:text-[#2563EB] transition-colors"
-      >
-        Projects
+    <div class="site-header__actions">
+      <a href="{{ site.cv_path | relative_url }}" class="btn btn-accent btn-sm" target="_blank" rel="noopener">
+        View CV
       </a>
-
-      <a
-        href="{{ '/#skills' | relative_url }}"
-        class="text-gray-600 hover:text-[#2563EB] transition-colors"
-      >
-        Skills
-      </a>
-
-      <a
-        href="{{ '/#certifications' | relative_url }}"
-        class="text-gray-600 hover:text-[#2563EB] transition-colors"
-      >
-        Certifications
-      </a>
+      <button type="button" class="nav-toggle" id="nav-toggle" aria-expanded="false" aria-controls="site-nav">
+        <span></span><span></span><span></span>
+      </button>
     </div>
-
-    <a
-      href="mailto:dly77915@gmail.com"
-      class="bg-[#2563EB] text-white rounded-full px-6 py-2 font-medium hover:-translate-y-0.5 hover:shadow-md transition-all"
-    >
-      Contact me
-    </a>
-  </nav>
+  </div>
 </header>

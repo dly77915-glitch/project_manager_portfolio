@@ -1,0 +1,41 @@
+---
+layout: default
+---
+<article class="project-detail">
+
+  <header class="project-detail__hero" {% if page.cover_image %}style="background-image: linear-gradient(180deg, rgba(15,23,42,.75), rgba(15,23,42,.92)), url('{{ page.cover_image | relative_url }}');"{% endif %}>
+    <div class="project-detail__hero-inner">
+      {% if page.role %}<span class="tag tag--accent">{{ page.role }}</span>{% endif %}
+      <h1>{{ page.title }}</h1>
+      {% if page.summary %}<p class="project-detail__summary">{{ page.summary }}</p>{% endif %}
+
+      {% if page.tags %}
+      <ul class="project-detail__tags">
+        {% for tag in page.tags %}<li>{{ tag }}</li>{% endfor %}
+      </ul>
+      {% endif %}
+    </div>
+  </header>
+
+  <div class="project-detail__body">
+    <div class="project-detail__content">
+      {{ content }}
+    </div>
+
+    {% if page.documents and page.documents.size > 0 %}
+    <aside class="project-detail__documents">
+      <h2>Documents</h2>
+      <ul>
+        {% for doc in page.documents %}
+        <li><a href="{{ doc.url | relative_url }}" target="_blank" rel="noopener">{{ doc.label }}</a></li>
+        {% endfor %}
+      </ul>
+    </aside>
+    {% endif %}
+  </div>
+
+  <div class="project-detail__nav">
+    <a href="{{ '/#projects' | relative_url }}" class="btn btn-outline">&larr; Back to Projects</a>
+  </div>
+
+</article>
