@@ -1,82 +1,30 @@
-# ==========================================================================
-# SITE CONFIGURATION — Digital PM Portfolio
-# This is a brand-new project, fully separate from the old BA portfolio.
-# ==========================================================================
+title: "Phuong Thao | Digital Project Manager"
+description: "Digital Project Manager portfolio focused on connecting business strategy, technology execution, data, and design."
+url: "https://dly77915-glitch.github.io"
+baseurl: "/project_manager_portfolio"
+lang: en
 
-title: "Phuong Thao Dang | Digital Project Manager"
-tagline: "Digital Project Manager | Business Analyst"
-description: >
-  I bridge the gap between business strategy and technology execution —
-  turning operational bottlenecks into digital solutions that drive
-  real, measurable impact.
+author:
+  name: "Phuong Thao"
+  role: "Digital Project Manager"
+  linkedin: "https://www.linkedin.com/in/thao-dang-53026041a/"
 
-author: "Dang Ly Phuong Thao"
-email: ""                     # TODO: add contact email
-linkedin_url: "https://www.linkedin.com/in/thao-dang-53026041a/"
-cv_path: "/assets/cv/cv.pdf"  # TODO: drop the updated Digital PM CV here
-
-# Base URL for GitHub Pages project sites, e.g. "/digital-pm-portfolio".
-# Leave blank if this will live at the domain root or a user/organization site.
-baseurl: ""
-url: ""
-
-markdown: kramdown
-kramdown:
-  input: GFM
-  syntax_highlighter: rouge
-
-permalink: /projects/:slug/
-
-# "projects" is a Jekyll collection so each case study lives in its own
-# Markdown file (front matter + body) instead of hardcoded HTML — this is
-# what keeps the site easy to extend as more projects are added later.
 collections:
   projects:
     output: true
-    permalink: /projects/:slug/
+    permalink: /projects/:name/
 
 defaults:
   - scope:
       path: ""
-      type: "projects"
+      type: projects
     values:
-      layout: "project"
-  - scope:
-      path: ""
-    values:
-      layout: "default"
+      layout: project
 
-# Central place to register nav items / future sections without touching HTML.
-nav:
-  - label: "Home"
-    href: "/#hero"
-  - label: "My Story"
-    href: "/#my-story"
-  - label: "Me at Work"
-    href: "/#me-at-work"
-  - label: "Projects"
-    href: "/#projects"
-  - label: "Activities"
-    href: "/#activities"
-
-# Brand color tokens (kept here as the single source of truth; mirrored as
-# CSS variables in assets/css/style.css so future palette tweaks — or a
-# future dark/light theme toggle — only need to change one place).
-theme:
-  primary: "#0F172A"     # Navy — hero / header / footer
-  primary_light: "#1E3A8A"
-  accent: "#F59E0B"       # Amber — CTAs, tags, icon accents
-  accent_dark: "#D97706"
-  bg: "#FFFFFF"
-  bg_muted: "#F8FAFC"
-  text: "#334155"
-
-sass:
-  style: compressed
+markdown: kramdown
+permalink: pretty
 
 exclude:
   - README.md
-  - Gemfile
-  - Gemfile.lock
-  - node_modules
-  - vendor
+  - README_IMPLEMENTATION.md
+  - .DS_Store

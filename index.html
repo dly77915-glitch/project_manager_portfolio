@@ -1,302 +1,294 @@
 ---
 layout: default
-title: "Home"
-description: "Digital Project Manager & Business Analyst portfolio of Phuong Thao Dang."
+title: Digital Project Manager Portfolio
+description: Phuong Thao's Digital Project Manager portfolio — connecting business strategy, technology execution, data, and design.
 ---
 
-<!-- ============================================================ -->
-<!-- 1. HERO                                                       -->
-<!-- ============================================================ -->
-<section id="hero" class="hero">
-  <div class="hero__grid-pattern" aria-hidden="true"></div>
+<section class="hero" id="home" aria-labelledby="hero-title">
+  {% include components/hero-video.html %}
 
-  <div class="hero__inner">
-    <p class="hero__eyebrow reveal" data-reveal="fade-up" data-delay="0">Digital Project Manager</p>
+  <div class="site-container hero__inner">
+    <div class="hero__content">
+      <p class="hero__role hero-enter" style="--enter-delay: 0.05s;">Digital Project Manager</p>
+      <h1 class="hero-enter" id="hero-title" style="--enter-delay: 0.14s;">Hello, I’m <span>Phuong Thao.</span></h1>
+      <p class="hero__description hero-enter" style="--enter-delay: 0.25s;">
+        I bridge the gap between business strategy and technology execution. My focus is on untangling operational bottlenecks and delivering digital solutions that drive real, measurable impact.
+      </p>
 
-    <h1 class="hero__headline reveal" data-reveal="fade-up" data-delay="100">
-      Hello, I'm Phuong&nbsp;Thao.
-    </h1>
-
-    <p class="hero__description reveal" data-reveal="fade-up" data-delay="220">
-      I bridge the gap between business strategy and technology execution.
-      My focus is on untangling operational bottlenecks and delivering
-      digital solutions that drive real, measurable impact.
-    </p>
-
-    <div class="hero__actions reveal" data-reveal="fade-up" data-delay="340">
-      <a href="{{ site.cv_path | relative_url }}" class="btn btn-accent" target="_blank" rel="noopener">View CV</a>
-      <a href="#projects" class="btn btn-outline btn-outline--light">View Projects</a>
-      <a href="{{ site.linkedin_url }}" class="btn btn-outline btn-outline--light" target="_blank" rel="noopener">LinkedIn</a>
+      <div class="hero__actions hero-enter" style="--enter-delay: 0.36s;">
+        <a class="button button--gold" href="{{ '/cv.pdf' | relative_url }}" target="_blank" rel="noopener">View CV <span aria-hidden="true">↗</span></a>
+        <a class="button button--light" href="#projects">View Projects <span aria-hidden="true">↓</span></a>
+        <a class="button button--ghost" href="{{ site.author.linkedin }}" target="_blank" rel="noopener">LinkedIn <span aria-hidden="true">↗</span></a>
+      </div>
     </div>
   </div>
 
-  <a href="#quote" class="hero__scroll-cue" aria-label="Scroll down">
-    <span></span>
+  <a class="hero__scroll-cue hero-enter" style="--enter-delay: 0.5s;" href="#philosophy">
+    <span>Scroll to explore</span>
+    <i aria-hidden="true"></i>
   </a>
 </section>
 
-<!-- ============================================================ -->
-<!-- 2. QUOTE / PHILOSOPHY                                         -->
-<!-- ============================================================ -->
-<section id="quote" class="quote">
-  <h2 class="quote__text reveal" data-reveal="fade-in">
-    &ldquo;If not me, who? If not now, when?&rdquo;
-  </h2>
-</section>
-
-<!-- ============================================================ -->
-<!-- 3. MY STORY — MINDSET CAROUSEL                                -->
-<!-- ============================================================ -->
-<section id="my-story" class="my-story">
-  <div class="my-story__head reveal" data-reveal="fade-up">
-    <span class="my-story__my">My</span>
-    <p class="my-story__hint">Swipe or scroll to read the rest of the sentence →</p>
-  </div>
-
-  <div class="my-story__track">
-
-    <article class="story-card" style="--card-accent: #2563EB;">
-      <span class="story-card__index">01</span>
-      <h3 class="story-card__title">&hellip;mindset</h3>
-      <p class="story-card__body">
-        I look beyond the surface to understand the entire ecosystem. By
-        connecting the dots between people, processes, and technology, I
-        build solutions that truly work.
-      </p>
-      <div class="story-card__image-slot" aria-hidden="true">
-        <span>+ Add image</span>
-      </div>
-    </article>
-
-    <article class="story-card" style="--card-accent: #0D9488;">
-      <span class="story-card__index">02</span>
-      <h3 class="story-card__title">&hellip;endless learning process</h3>
-      <p class="story-card__body">
-        The digital landscape shifts rapidly, and I thrive within that
-        chaos. I constantly absorb new frameworks, operational models,
-        and technologies to stay ahead of the curve.
-      </p>
-      <div class="story-card__image-slot" aria-hidden="true">
-        <span>+ Add image</span>
-      </div>
-    </article>
-
-    <article class="story-card" style="--card-accent: #D97706;">
-      <span class="story-card__index">03</span>
-      <h3 class="story-card__title">&hellip;motivation</h3>
-      <p class="story-card__body">
-        I strive to be the ultimate problem-solver. When teams face a
-        roadblock, I want to be the first person they trust to navigate
-        them toward success.
-      </p>
-      <div class="story-card__image-slot" aria-hidden="true">
-        <span>+ Add image</span>
-      </div>
-    </article>
-
-    <article class="story-card" style="--card-accent: #DB2777;">
-      <span class="story-card__index">04</span>
-      <h3 class="story-card__title">&hellip;ownership</h3>
-      <p class="story-card__body">
-        I treat every project as if it were my own company. I take bold
-        initiatives, make decisive choices, and take full accountability
-        for the final outcome.
-      </p>
-      <div class="story-card__image-slot" aria-hidden="true">
-        <span>+ Add image</span>
-      </div>
-    </article>
-
-    <article class="story-card" style="--card-accent: #7C3AED;">
-      <span class="story-card__index">05</span>
-      <h3 class="story-card__title">&hellip;ambition</h3>
-      <p class="story-card__body">
-        My ultimate goal is to lead impactful digital transformations. I
-        aspire to orchestrate innovative ecosystems that redefine how
-        businesses operate and deliver value to users.
-      </p>
-      <div class="story-card__image-slot" aria-hidden="true">
-        <span>+ Add image</span>
-      </div>
-    </article>
-
+<section class="quote-section" id="philosophy" aria-labelledby="quote-heading">
+  <div class="site-container quote-section__inner" data-quote-parallax>
+    <p class="eyebrow" data-reveal>My philosophy</p>
+    <h2 id="quote-heading" data-reveal>“If not me, who?<br>If not now, when?”</h2>
   </div>
 </section>
 
-<!-- ============================================================ -->
-<!-- 4. ME AT WORK — BRIDGING THE 4 PILLARS                        -->
-<!-- ============================================================ -->
-<section id="me-at-work" class="me-at-work">
+<section class="story-section section" id="story" aria-labelledby="story-heading">
+  <div class="site-container">
+    <div class="section-heading section-heading--split">
+      <div>
+        <p class="eyebrow" data-reveal>Beyond the job title</p>
+        <h2 id="story-heading" data-reveal>My<span>...</span></h2>
+      </div>
+      <p data-reveal>
+        Five ideas that shape how I learn, take responsibility, and show up when a problem needs clarity.
+      </p>
+    </div>
 
-  <div class="me-at-work__marquee" aria-hidden="true">
-    <div class="me-at-work__marquee-track">
-      <span>Jira</span><span>&bull;</span>
-      <span>Confluence</span><span>&bull;</span>
-      <span>Odoo</span><span>&bull;</span>
-      <span>Figma</span><span>&bull;</span>
-      <span>Draw.io</span><span>&bull;</span>
-      <span>PostgreSQL</span><span>&bull;</span>
-      <!-- duplicated for a seamless loop -->
-      <span>Jira</span><span>&bull;</span>
-      <span>Confluence</span><span>&bull;</span>
-      <span>Odoo</span><span>&bull;</span>
-      <span>Figma</span><span>&bull;</span>
-      <span>Draw.io</span><span>&bull;</span>
-      <span>PostgreSQL</span><span>&bull;</span>
+    <div class="story-carousel" data-story-carousel>
+      <div class="story-carousel__track" data-story-track tabindex="0" aria-label="My story cards">
+        <article class="story-card story-card--blue" data-reveal>
+          <div class="story-card__top">
+            <span>01</span>
+            <p>System perspective</p>
+          </div>
+          <h3>… mindset</h3>
+          <p>I look beyond the surface to understand the entire ecosystem. By connecting the dots between people, processes, and technology, I build solutions that truly work.</p>
+          <div class="story-card__media story-card__media--mindset" role="img" aria-label="Abstract systems illustration placeholder">
+            <span>People</span><span>Process</span><span>Technology</span>
+          </div>
+        </article>
+
+        <article class="story-card story-card--sky" data-reveal>
+          <div class="story-card__top">
+            <span>02</span>
+            <p>Growth mindset</p>
+          </div>
+          <h3>… endless learning process</h3>
+          <p>The digital landscape shifts rapidly, and I thrive within that chaos. I constantly absorb new frameworks, operational models, and technologies to stay ahead of the curve.</p>
+          <div class="story-card__media story-card__media--learning" role="img" aria-label="Abstract learning illustration placeholder">
+            <span>Learn</span><span>Apply</span><span>Reflect</span>
+          </div>
+        </article>
+
+        <article class="story-card story-card--gold" data-reveal>
+          <div class="story-card__top">
+            <span>03</span>
+            <p>Trusted problem-solver</p>
+          </div>
+          <h3>… motivation</h3>
+          <p>I strive to be the ultimate problem-solver. When teams face a roadblock, I want to be the first person they trust to navigate them toward success.</p>
+          <div class="story-card__media story-card__media--motivation" role="img" aria-label="Abstract problem solving illustration placeholder">
+            <span>Roadblock</span><span>Clarity</span><span>Progress</span>
+          </div>
+        </article>
+
+        <article class="story-card story-card--navy" data-reveal>
+          <div class="story-card__top">
+            <span>04</span>
+            <p>Accountability</p>
+          </div>
+          <h3>… ownership</h3>
+          <p>I treat every project as if it were my own company. I take bold initiatives, make decisive choices, and take full accountability for the final outcome.</p>
+          <div class="story-card__media story-card__media--ownership" role="img" aria-label="Abstract ownership illustration placeholder">
+            <span>Initiate</span><span>Decide</span><span>Deliver</span>
+          </div>
+        </article>
+
+        <article class="story-card story-card--cobalt" data-reveal>
+          <div class="story-card__top">
+            <span>05</span>
+            <p>Future direction</p>
+          </div>
+          <h3>… ambition</h3>
+          <p>My ultimate goal is to lead impactful digital transformations. I aspire to orchestrate innovative ecosystems that redefine how businesses operate and deliver value to users.</p>
+          <div class="story-card__media story-card__media--ambition" role="img" aria-label="Abstract digital transformation illustration placeholder">
+            <span>Vision</span><span>Alignment</span><span>Impact</span>
+          </div>
+        </article>
+      </div>
+
+      <div class="story-carousel__footer">
+        <p><span data-story-current>01</span> / 05</p>
+        <div class="carousel-buttons">
+          <button type="button" aria-label="Previous story" data-story-prev>←</button>
+          <button type="button" aria-label="Next story" data-story-next>→</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="capabilities-section section" id="capabilities" aria-labelledby="capabilities-heading">
+  <div class="tool-marquee" aria-hidden="true">
+    <div class="tool-marquee__track">
+      <span>Jira</span><span>Confluence</span><span>Figma</span><span>Draw.io</span><span>Odoo</span><span>PostgreSQL</span><span>SQL</span><span>BPMN</span><span>GitHub</span>
+      <span>Jira</span><span>Confluence</span><span>Figma</span><span>Draw.io</span><span>Odoo</span><span>PostgreSQL</span><span>SQL</span><span>BPMN</span><span>GitHub</span>
     </div>
   </div>
 
-  <div class="me-at-work__head reveal" data-reveal="fade-up">
-    <h2 class="section-title">Bridging The 4 Pillars</h2>
-    <p class="section-subtitle">
-      The core capabilities I leverage to align cross-functional teams
-      and drive digital execution.
-    </p>
-  </div>
+  <div class="site-container capabilities-section__content">
+    <div class="section-heading section-heading--light">
+      <p class="eyebrow eyebrow--gold" data-reveal>Me at work</p>
+      <h2 id="capabilities-heading" data-reveal>Bridging the <span>4 Pillars</span></h2>
+      <p data-reveal>The core capabilities I leverage to align cross-functional teams and drive digital execution.</p>
+    </div>
 
-  <div class="pillars-grid">
+    <div class="pillars-grid">
+      <article class="pillar-card pillar-card--business" data-reveal style="--reveal-delay: 0s;">
+        <div class="pillar-card__number">01</div>
+        <div class="pillar-card__icon" aria-hidden="true">B</div>
+        <h3>Business</h3>
+        <p>Translate operational realities into clear objectives, aligned scope, and actionable product documentation.</p>
+        <ul>
+          <li>Process Optimization</li>
+          <li>BRD / PRD Documentation</li>
+          <li>Stakeholder Management</li>
+          <li>Gap Analysis</li>
+        </ul>
+      </article>
 
-    <article class="pillar-card pillar-card--business reveal" data-reveal="fade-up" data-delay="0">
-      <span class="pillar-card__icon" aria-hidden="true">💼</span>
-      <h3 class="pillar-card__title">Business</h3>
-      <ul class="pillar-card__list">
-        <li>Process Optimization</li>
-        <li>BRD / PRD Documentation</li>
-        <li>Stakeholder Management</li>
-        <li>GAP Analysis</li>
-      </ul>
-    </article>
+      <article class="pillar-card pillar-card--tech" data-reveal style="--reveal-delay: 0.12s;">
+        <div class="pillar-card__number">02</div>
+        <div class="pillar-card__icon" aria-hidden="true">T</div>
+        <h3>Technology</h3>
+        <p>Understand system behavior deeply enough to turn business needs into feasible implementation conversations.</p>
+        <ul>
+          <li>Odoo ERP Implementation</li>
+          <li>System Architecture Understanding</li>
+          <li>API Logic</li>
+          <li>System Workflow</li>
+        </ul>
+      </article>
 
-    <article class="pillar-card pillar-card--tech reveal" data-reveal="fade-up" data-delay="150">
-      <span class="pillar-card__icon" aria-hidden="true">⚙️</span>
-      <h3 class="pillar-card__title">Tech</h3>
-      <ul class="pillar-card__list">
-        <li>Odoo ERP Implementation</li>
-        <li>System Architecture Understanding</li>
-        <li>API Logic</li>
-      </ul>
-    </article>
+      <article class="pillar-card pillar-card--data" data-reveal style="--reveal-delay: 0.24s;">
+        <div class="pillar-card__number">03</div>
+        <div class="pillar-card__icon" aria-hidden="true">D</div>
+        <h3>Data</h3>
+        <p>Use structured data thinking to validate assumptions, define information flows, and support better decisions.</p>
+        <ul>
+          <li>SQL Querying</li>
+          <li>Data Modeling</li>
+          <li>Entity Relationship Diagrams</li>
+          <li>Data-driven Decision Making</li>
+        </ul>
+      </article>
 
-    <article class="pillar-card pillar-card--data reveal" data-reveal="fade-up" data-delay="300">
-      <span class="pillar-card__icon" aria-hidden="true">📊</span>
-      <h3 class="pillar-card__title">Data</h3>
-      <ul class="pillar-card__list">
-        <li>SQL Querying</li>
-        <li>Data Modeling (ERD)</li>
-        <li>Data-driven Decision Making</li>
-      </ul>
-    </article>
-
-    <article class="pillar-card pillar-card--design reveal" data-reveal="fade-up" data-delay="450">
-      <span class="pillar-card__icon" aria-hidden="true">🎨</span>
-      <h3 class="pillar-card__title">Design</h3>
-      <ul class="pillar-card__list">
-        <li>Figma Prototyping</li>
-        <li>User Flow</li>
-        <li>BPMN 2.0</li>
-      </ul>
-    </article>
-
-  </div>
-</section>
-
-<!-- ============================================================ -->
-<!-- 5. FEATURED PROJECTS                                          -->
-<!-- ============================================================ -->
-<section id="projects" class="projects">
-  <h2 class="section-title reveal" data-reveal="fade-up">Featured Projects</h2>
-
-  <div class="projects-grid">
-
-    <article class="project-card reveal" data-reveal="slide-right">
-      <span class="tag tag--accent">Project Manager & BA</span>
-      <h3>Odoo ERP for HT Beauty Clinic</h3>
-      <p>
-        Full-scale digitization and process automation. Identified and
-        resolved 46 operational gaps, engineering a scheduling algorithm
-        that eliminated double-booking entirely.
-      </p>
-      <a href="{{ '/projects/ht-beauty/' | relative_url }}" class="link-arrow">
-        View project <span aria-hidden="true">&rarr;</span>
-      </a>
-    </article>
-
-    <article class="project-card reveal" data-reveal="slide-left">
-      <span class="tag">Business Analyst</span>
-      <h3>Digital Ordering Solution — Tra Anh</h3>
-      <p>
-        Redesigned end-to-end operational workflows to eliminate
-        peak-hour bottlenecks. Architected the data structure and UI/UX
-        prototype for a new mobile ordering platform.
-      </p>
-      <a href="{{ '/projects/tra-anh/' | relative_url }}" class="link-arrow">
-        View project <span aria-hidden="true">&rarr;</span>
-      </a>
-    </article>
-
+      <article class="pillar-card pillar-card--design" data-reveal style="--reveal-delay: 0.36s;">
+        <div class="pillar-card__number">04</div>
+        <div class="pillar-card__icon" aria-hidden="true">D</div>
+        <h3>Design</h3>
+        <p>Make complex flows visible, testable, and easier for business, users, and technical teams to discuss together.</p>
+        <ul>
+          <li>Figma Prototyping</li>
+          <li>User Flow</li>
+          <li>BPMN 2.0</li>
+          <li>Experience Mapping</li>
+        </ul>
+      </article>
+    </div>
   </div>
 </section>
 
-<!-- ============================================================ -->
-<!-- 6. ACTIVITIES — OFF-CANVAS DRAWER                              -->
-<!-- ============================================================ -->
-<section id="activities" class="activities">
-  <h2 class="section-title reveal" data-reveal="fade-up">Beyond Work</h2>
-  <p class="section-subtitle reveal" data-reveal="fade-up">
-    Community and creative projects that sharpen my empathy, broaden my
-    perspective, and build my facilitation skills in diverse settings.
-  </p>
+<section class="projects-section section" id="projects" aria-labelledby="projects-heading">
+  <div class="site-container">
+    <div class="section-heading section-heading--split">
+      <div>
+        <p class="eyebrow" data-reveal>Selected work</p>
+        <h2 id="projects-heading" data-reveal>Featured Projects</h2>
+      </div>
+      <p data-reveal>Two projects that show how I move from operational pain points to structured digital solutions.</p>
+    </div>
 
-  <div class="activities-grid">
+    <div class="projects-grid">
+      <article class="project-card" data-reveal="left">
+        <div class="project-card__media project-card__media--ht" role="img" aria-label="HT Beauty Clinic project cover placeholder">
+          <span>Odoo ERP</span>
+          <strong>HT Beauty Clinic</strong>
+        </div>
+        <div class="project-card__body">
+          <div class="project-card__meta">
+            <span>Project Manager & Business Analyst</span>
+            <span>ERP Transformation</span>
+          </div>
+          <h3>Operational Digitalization with Odoo ERP</h3>
+          <p>Mapped end-to-end clinic operations, identified 46 operational gaps, and designed a system approach to reduce resource conflicts and double-booking.</p>
+          <ul class="impact-list">
+            <li>46 operational gaps identified</li>
+            <li>Cross-functional workflow redesign</li>
+            <li>Resource and appointment control logic</li>
+          </ul>
+          <a class="text-link" href="{{ '/projects/ht-beauty/' | relative_url }}">Explore project <span aria-hidden="true">→</span></a>
+        </div>
+      </article>
 
-    <button type="button" class="activity-card activity-card--orange reveal" data-reveal="fade-up" data-drawer-target="cham-di-thoi">
-      <span class="tag" style="color:#D97706; background:#FFF3E0;">Social Project</span>
-      <h3>Chạm đi thôi</h3>
-      <p>A community initiative connecting people and spreading positive impact.</p>
-      <span class="link-arrow">View Details <span aria-hidden="true">&rarr;</span></span>
-    </button>
-
-    <button type="button" class="activity-card activity-card--teal reveal" data-reveal="fade-up" data-drawer-target="kinh-van-hoa">
-      <span class="tag" style="color:#0891B2; background:#E0F2FE;">Creative / Research</span>
-      <h3>Kính vạn hoa</h3>
-      <p>A research project exploring multiple perspectives on people and organizations.</p>
-      <span class="link-arrow">View Details <span aria-hidden="true">&rarr;</span></span>
-    </button>
-
-    <button type="button" class="activity-card activity-card--amber reveal" data-reveal="fade-up" data-drawer-target="trung-thu-cung-em">
-      <span class="tag" style="color:#B45309; background:#FEF3C7;">Community Project</span>
-      <h3>Trung thu cùng em</h3>
-      <p>A Mid-Autumn community activity bringing joy to children in need.</p>
-      <span class="link-arrow">View Details <span aria-hidden="true">&rarr;</span></span>
-    </button>
-
+      <article class="project-card" data-reveal="right">
+        <div class="project-card__media project-card__media--tra" role="img" aria-label="Tra Anh digital ordering project cover placeholder">
+          <span>Digital Ordering</span>
+          <strong>Trà Anh</strong>
+        </div>
+        <div class="project-card__body">
+          <div class="project-card__meta">
+            <span>Business Analyst</span>
+            <span>Mobile Experience</span>
+          </div>
+          <h3>Digital Ordering Experience</h3>
+          <p>Restructured the ordering workflow to reduce peak-hour bottlenecks and translated the solution into system flows, data architecture, and a mobile prototype.</p>
+          <ul class="impact-list">
+            <li>End-to-end ordering workflow</li>
+            <li>Data model and system logic</li>
+            <li>UI/UX prototype</li>
+          </ul>
+          <a class="text-link" href="{{ '/projects/tra-anh/' | relative_url }}">Explore project <span aria-hidden="true">→</span></a>
+        </div>
+      </article>
+    </div>
   </div>
 </section>
 
-<!-- Off-canvas drawer + overlay (shared by all 3 activity cards) -->
-<div class="drawer-overlay" id="drawer-overlay"></div>
+<section class="activities-section section" id="activities" aria-labelledby="activities-heading">
+  <div class="site-container">
+    <div class="section-heading section-heading--split">
+      <div>
+        <p class="eyebrow" data-reveal>Outside the project plan</p>
+        <h2 id="activities-heading" data-reveal>Activities that shaped me</h2>
+      </div>
+      <p data-reveal>Community and creative experiences that strengthened the way I listen, coordinate, and work with people.</p>
+    </div>
 
-<aside class="drawer" id="drawer" aria-hidden="true">
-  <button type="button" class="drawer__close" id="drawer-close" aria-label="Close">&times;</button>
+    <div class="activities-grid">
+      <article class="activity-card activity-card--blue" data-reveal>
+        <div class="activity-card__number">01</div>
+        <div>
+          <p class="activity-card__type">Community project</p>
+          <h3>Chạm đi thôi</h3>
+          <p>A story about connection, empathy, and creating a positive shared experience.</p>
+        </div>
+        <button class="text-link" type="button" data-activity-open="cham-di-thoi">View story <span aria-hidden="true">→</span></button>
+      </article>
 
-  <div class="drawer__panel" data-drawer-panel="cham-di-thoi">
-    <div class="drawer__cover" aria-hidden="true">Cover image placeholder</div>
-    <span class="tag" style="color:#D97706; background:#FFF3E0;">Social Project</span>
-    <h3>Chạm đi thôi</h3>
-    <p><em>Full story, role, and key learnings — TODO: add detailed content.</em></p>
+      <article class="activity-card activity-card--teal" data-reveal style="--reveal-delay: 0.12s;">
+        <div class="activity-card__number">02</div>
+        <div>
+          <p class="activity-card__type">Creative exploration</p>
+          <h3>Kính vạn hoa</h3>
+          <p>An experience that taught me to observe people and problems through multiple perspectives.</p>
+        </div>
+        <button class="text-link" type="button" data-activity-open="kinh-van-hoa">View story <span aria-hidden="true">→</span></button>
+      </article>
+
+      <article class="activity-card activity-card--gold" data-reveal style="--reveal-delay: 0.24s;">
+        <div class="activity-card__number">03</div>
+        <div>
+          <p class="activity-card__type">Volunteer activity</p>
+          <h3>Trung thu cùng em</h3>
+          <p>A volunteer event shaped by thoughtful preparation, teamwork, and small moments of joy.</p>
+        </div>
+        <button class="text-link" type="button" data-activity-open="trung-thu-cung-em">View story <span aria-hidden="true">→</span></button>
+      </article>
+    </div>
   </div>
-
-  <div class="drawer__panel" data-drawer-panel="kinh-van-hoa">
-    <div class="drawer__cover" aria-hidden="true">Cover image placeholder</div>
-    <span class="tag" style="color:#0891B2; background:#E0F2FE;">Creative / Research</span>
-    <h3>Kính vạn hoa</h3>
-    <p><em>Full story, role, and key learnings — TODO: add detailed content.</em></p>
-  </div>
-
-  <div class="drawer__panel" data-drawer-panel="trung-thu-cung-em">
-    <div class="drawer__cover" aria-hidden="true">Cover image placeholder</div>
-    <span class="tag" style="color:#B45309; background:#FEF3C7;">Community Project</span>
-    <h3>Trung thu cùng em</h3>
-    <p><em>Full story, role, and key learnings — TODO: add detailed content.</em></p>
-  </div>
-</aside>
+</section>

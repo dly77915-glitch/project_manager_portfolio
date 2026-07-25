@@ -1,18 +1,19 @@
 <footer class="site-footer">
-  <div class="site-footer__inner">
-    <div class="site-footer__brand">
-      <span class="site-footer__name">{{ site.author }}</span>
-      <span class="site-footer__role">{{ site.tagline }}</span>
+  <div class="site-container site-footer__grid">
+    <div>
+      <p class="eyebrow eyebrow--light">Build with purpose</p>
+      <h2>Let’s turn complex problems into clear digital outcomes.</h2>
     </div>
 
-    <div class="site-footer__links">
-      <a href="{{ site.linkedin_url }}" target="_blank" rel="noopener">LinkedIn</a>
-      <a href="{{ site.cv_path | relative_url }}" target="_blank" rel="noopener">CV</a>
-      <a href="{{ '/#hero' | relative_url }}">Back to top ↑</a>
+    <div class="site-footer__links" aria-label="Footer links">
+      <a href="{{ site.author.linkedin }}" target="_blank" rel="noopener">LinkedIn ↗</a>
+      <a href="{{ '/cv.pdf' | relative_url }}" target="_blank" rel="noopener">View CV ↗</a>
+      <a href="#main-content">Back to top ↑</a>
     </div>
+  </div>
 
-    <div class="site-footer__meta">
-      &copy; {{ site.time | date: '%Y' }} {{ site.author }}. Built from scratch, end to end.
-    </div>
+  <div class="site-container site-footer__bottom">
+    <p>Designed and built by {{ site.author.name }}.</p>
+    <p>© <span data-current-year></span></p>
   </div>
 </footer>
