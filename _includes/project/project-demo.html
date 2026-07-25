@@ -1,0 +1,22 @@
+{% assign demo = include.demo %}
+<section class="project-section project-section--ink project-demo" id="{{ demo.id | default: 'project-demo' }}">
+  <div class="project-container">
+    <div class="project-heading project-heading--split project-heading--light" data-project-reveal>
+      <div>
+        <p class="project-kicker project-kicker--gold">{{ demo.kicker }}</p>
+        <h2>{{ demo.title }}</h2>
+      </div>
+      <p>{{ demo.description }}</p>
+    </div>
+
+    <div class="project-video project-video--wide" data-project-reveal>
+      <iframe
+        src="https://www.youtube-nocookie.com/embed/{{ demo.youtube_id }}?rel=0&playsinline=1&controls=1"
+        title="{{ demo.video_title }}"
+        loading="lazy"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+        allowfullscreen
+      ></iframe>
+    </div>
+  </div>
+</section>

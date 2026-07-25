@@ -1,0 +1,21 @@
+<section class="project-section project-section--light" id="project-overview">
+  <div class="project-container">
+    <div class="project-heading project-heading--split" data-project-reveal>
+      <div>
+        <p class="project-kicker">Executive snapshot</p>
+        <h2>{{ page.snapshot_heading }}</h2>
+      </div>
+      <p>{{ page.snapshot_intro }}</p>
+    </div>
+
+    <div class="snapshot-grid">
+      {% for item in page.snapshot %}
+        <article class="snapshot-card" data-project-reveal data-project-delay="{{ forloop.index0 | times: 70 }}">
+          <span class="snapshot-card__number">0{{ forloop.index }}</span>
+          <h3>{{ item.title }}</h3>
+          <p>{{ item.text }}</p>
+        </article>
+      {% endfor %}
+    </div>
+  </div>
+</section>

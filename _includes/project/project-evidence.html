@@ -1,0 +1,30 @@
+<section class="project-section project-section--ink" id="project-evidence">
+  <div class="project-container">
+    <div class="project-heading project-heading--split project-heading--light" data-project-reveal>
+      <div>
+        <p class="project-kicker project-kicker--gold">Selected project evidence</p>
+        <h2>{{ page.evidence_heading }}</h2>
+      </div>
+      <p>{{ page.evidence_intro }}</p>
+    </div>
+
+    <div class="evidence-grid">
+      {% for item in page.evidence %}
+        {% if item.visible %}
+          <article class="evidence-card" data-project-reveal data-project-delay="{{ forloop.index0 | times: 60 }}">
+            <div class="evidence-card__top">
+              <span>{{ item.type }}</span>
+              <small>{{ item.status }}</small>
+            </div>
+            <h3>{{ item.title }}</h3>
+            <p>{{ item.summary }}</p>
+            {% if item.tags %}<ul>{% for tag in item.tags %}<li>{{ tag }}</li>{% endfor %}</ul>{% endif %}
+            <button type="button" data-evidence-open="{{ item.id }}">
+              Explore evidence <span aria-hidden="true">→</span>
+            </button>
+          </article>
+        {% endif %}
+      {% endfor %}
+    </div>
+  </div>
+</section>

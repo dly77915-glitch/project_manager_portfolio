@@ -1,0 +1,23 @@
+<section class="project-section project-section--blue" id="project-impact">
+  <div class="project-container">
+    <div class="project-heading project-heading--split project-heading--light" data-project-reveal>
+      <div>
+        <p class="project-kicker project-kicker--gold">Outcome & impact</p>
+        <h2>{{ page.impact_heading }}</h2>
+      </div>
+      <p>{{ page.impact_intro }}</p>
+    </div>
+
+    <div class="impact-grid">
+      {% for item in page.impact %}
+        <article class="impact-card" data-project-reveal data-project-delay="{{ forloop.index0 | times: 60 }}">
+          <span>{{ item.label }}</span>
+          <strong>{{ item.value }}</strong>
+          <p>{{ item.text }}</p>
+        </article>
+      {% endfor %}
+    </div>
+
+    {% if page.impact_note %}<p class="impact-note" data-project-reveal>{{ page.impact_note }}</p>{% endif %}
+  </div>
+</section>

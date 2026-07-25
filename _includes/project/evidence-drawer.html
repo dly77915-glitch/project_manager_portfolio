@@ -1,0 +1,57 @@
+{% if page.evidence_enabled %}
+  <div class="evidence-drawer-layer" data-evidence-layer aria-hidden="true">
+    <button class="evidence-drawer-overlay" type="button" data-evidence-close aria-label="Close project evidence"></button>
+
+    <aside class="evidence-drawer" role="dialog" aria-modal="true" aria-labelledby="evidence-drawer-title" tabindex="-1" data-evidence-drawer>
+      <header class="evidence-drawer__header">
+        <div>
+          <p>Selected project evidence</p>
+          <h2 id="evidence-drawer-title" data-evidence-title>Evidence</h2>
+        </div>
+        <button type="button" data-evidence-close aria-label="Close evidence drawer">×</button>
+      </header>
+
+      <div class="evidence-drawer__body">
+        {% for item in page.evidence %}
+          {% if item.visible %}
+            <article class="evidence-panel" data-evidence-panel="{{ item.id }}" hidden>
+              <div class="evidence-panel__intro">
+                <p class="project-kicker">{{ item.type }}</p>
+                <h3>{{ item.title }}</h3>
+                <p>{{ item.drawer_intro }}</p>
+              </div>
+
+              {% if item.metrics %}
+                <div class="evidence-metrics">
+                  {% for metric in item.metrics %}
+                    <div><strong>{{ metric.value }}</strong><span>{{ metric.label }}</span></div>
+                  {% endfor %}
+                </div>
+              {% endif %}
+
+              {% for section in item.sections %}
+                <section class="evidence-content-section">
+                  <p class="evidence-content-section__number">0{{ forloop.index }}</p>
+                  <div>
+                    <h4>{{ section.title }}</h4>
+                    {% if section.text %}<p>{{ section.text }}</p>{% endif %}
+                    {% if section.bullets %}
+                      <ul>{% for bullet in section.bullets %}<li>{{ bullet }}</li>{% endfor %}</ul>
+                    {% endif %}
+                  </div>
+                </section>
+              {% endfor %}
+
+              {% if item.file %}
+                <div class="evidence-panel__actions">
+                  <a href="{{ item.file | relative_url }}" target="_blank" rel="noopener noreferrer">View original PDF <span aria-hidden="true">↗</span></a>
+                  {% if item.download %}<a href="{{ item.file | relative_url }}" download>Download PDF <span aria-hidden="true">↓</span></a>{% endif %}
+                </div>
+              {% endif %}
+            </article>
+          {% endif %}
+        {% endfor %}
+      </div>
+    </aside>
+  </div>
+{% endif %}

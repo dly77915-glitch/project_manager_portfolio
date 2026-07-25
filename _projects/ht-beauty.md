@@ -1,11 +1,347 @@
 ---
 title: "HT Beauty Clinic"
+project_key: "ht-beauty"
+category: "Operational Digitalization · ERP Implementation"
+subtitle: "Designing an operational management ecosystem for a growing dermatology clinic."
+description: "A project-management case study on turning fragmented clinic operations into a structured Odoo ecosystem across CRM, appointments, treatment records, and customer follow-up."
 role: "Project Manager & Business Analyst"
-summary: "Operational digitalization and Odoo ERP solution design for a beauty clinic."
+role_short: "PM & BA"
+hero_visual: "ht-ecosystem"
+# Optional project image. Keep false until the file is added.
+hero_image_visible: false
+hero_image: "/assets/images/ht-beauty/project-cover.webp"
+tools:
+  - "Odoo 19"
+  - "Python"
+  - "PostgreSQL"
+  - "BPMN / UML"
+  - "Waterfall"
+source_code: "https://github.com/thaodang31231024250-blip/ht_beauty_management_nhomf.git"
+project_meta:
+  - label: "Role"
+    value: "Project Manager & Business Analyst"
+  - label: "Duration"
+    value: "Apr 2026 – Jun 2026"
+  - label: "Team"
+    value: "5 members"
+  - label: "Domain"
+    value: "Dermatology Clinic · CRM · Appointment"
+  - label: "Methodology"
+    value: "Waterfall"
+
+snapshot_heading: "A fragmented operation needed one shared direction."
+snapshot_intro: "The case study focuses on the decisions required to connect business needs, platform capabilities, operational risks, and implementation priorities."
+snapshot:
+  - title: "The context"
+    text: "Customer data, bookings, medical notes, and follow-up activities were distributed across Google Sheets, Zalo, and paper records."
+  - title: "The challenge"
+    text: "The clinic needed better control of appointment resources, treatment information, customer ownership, and after-care without over-customizing the ERP."
+  - title: "The direction"
+    text: "A layered Odoo ecosystem combined standard capabilities, configuration, and focused custom modules for clinic-specific workflows."
+  - title: "My contribution"
+    text: "I connected process analysis, requirement definition, fit–gap decisions, project coordination, and solution validation into one delivery narrative."
+
+demo:
+  visible: true
+  position: "early"
+  id: "project-demo"
+  kicker: "Project demo"
+  title: "See the ecosystem working as one connected flow."
+  description: "The full-width demo shows how customer information, appointment resources, treatment workflows, and follow-up tasks move through the proposed Odoo solution."
+  youtube_id: "AOqt3BUsX_c"
+  video_title: "HT Beauty Odoo ecosystem project demo"
+
+context:
+  kicker: "Why this project mattered"
+  title: "Operational gaps were affecting both service quality and decision visibility."
+  intro: "The initial issue was not a single missing feature. It was a chain of disconnected handoffs across customer service, reception, clinical work, and after-care."
+  paragraphs:
+    - "Lead information arrived from multiple channels and was manually cleaned, assigned, and followed up. Appointment availability depended on checking staff and room capacity across shared sheets. Treatment plans, session logs, and before-and-after records moved through paper files and separate documents."
+    - "This fragmentation increased the risk of duplicated work, missed follow-ups, inconsistent customer records, resource conflicts, and knowledge loss when information remained with individual employees rather than the organization."
+  flow:
+    - "Zalo & channels"
+    - "Google Sheets"
+    - "Paper records"
+    - "Manual booking"
+    - "Human-dependent follow-up"
+
+collaboration:
+  title: "I translated operational ambiguity into delivery decisions."
+  intro: "My role sat between business context, process modeling, platform constraints, and implementation work. The goal was not to turn every request into customization, but to create a solution direction the team could explain, build, and validate."
+  ownership:
+    - "Structured the project scope, major workstreams, deliverables, and Waterfall execution sequence."
+    - "Analyzed end-to-end AS-IS workflows and consolidated 46 operational gaps."
+    - "Defined and documented 33 functional requirements across CRM, booking, treatment, and automation."
+    - "Mapped requirements to Standard, Configuration, or Customization decisions in Odoo."
+    - "Aligned stakeholder scenarios, system logic, documentation, and implementation priorities across the project team."
+  stakeholder_groups:
+    - label: "Business"
+      people:
+        - "Clinic Owner"
+        - "Customer Service"
+    - label: "Operations"
+      people:
+        - "Receptionist"
+        - "Doctor"
+        - "Technician"
+    - label: "Delivery"
+      people:
+        - "Developer"
+        - "Project Team"
+
+journey_heading: "A structured path from current-state evidence to an implementation-ready ecosystem."
+journey_intro: "Each stage reduced a different type of uncertainty: business ambiguity, stakeholder misalignment, platform fit, technical scope, or validation risk."
+journey:
+  - title: "Discover"
+    text: "Mapped 10 AS-IS cross-functional workflows and documented where data, decisions, and responsibility changed hands."
+    output: "AS-IS flows · stakeholder analysis"
+  - title: "Align"
+    text: "Connected business priorities with the needs of customer service, reception, doctors, technicians, and project delivery roles."
+    output: "Scope · shared problem framing"
+  - title: "Define"
+    text: "Converted operational pain points into 46 gaps and 33 functional requirements with clear actors and priorities."
+    output: "BRD · FRD · gap register"
+  - title: "Design"
+    text: "Modeled TO-BE workflows, data structures, module dependencies, validation rules, and user interactions."
+    output: "BPMN · UML · ERD · architecture"
+  - title: "Validate"
+    text: "Reviewed scenarios such as multi-resource booking, lead deduplication, treatment sessions, and automated follow-up."
+    output: "Scenario validation · solution review"
+  - title: "Deliver"
+    text: "Organized the system into standard modules, configuration work, and focused custom modules with traceable rationale."
+    output: "Implementation package · project demo"
+
+challenges_heading: "Three challenges carried the highest operational risk."
+challenges_intro: "These issues were selected because they crossed multiple teams and could not be solved through an isolated screen or single workflow change."
+challenges:
+  - title: "Appointment and resource conflicts"
+    situation: "Reception staff had to check doctors, technicians, rooms, and time slots manually before confirming an appointment."
+    impact: "A missed constraint could create overlapping resources, delays, and a poor customer experience at the clinic."
+    difficulty: "Availability depended on several resource types at once, so a simple calendar check was not sufficient."
+  - title: "Fragmented lead and customer data"
+    situation: "Lead capture, duplicate checking, assignment, medical notes, and communication history were distributed across tools."
+    impact: "Teams could contact the same customer twice, lose context, or delay follow-up because ownership was unclear."
+    difficulty: "The solution needed to unify records while preserving access control and clinic-specific information."
+  - title: "Human-dependent treatment follow-up"
+    situation: "Post-treatment care and appointment reminders depended on staff remembering dates and manually creating messages or tasks."
+    impact: "Missed reminders could affect continuity of care, customer confidence, and resource planning."
+    difficulty: "Automation had to respect treatment milestones, assigned roles, and exceptions rather than sending generic notifications."
+
+solutions_heading: "The solution was shaped by fit, risk, and maintainability—not feature volume."
+solutions_intro: "Each decision balanced immediate operational value with the long-term cost of configuration and custom development."
+solutions:
+  - title: "Smart Booking & Multi-resource Validation"
+    problem: "Manual booking could not reliably validate the availability of customers, doctors or technicians, treatment rooms, and overlapping time windows."
+    decision: "Design a clinic-specific appointment module with layered validation rules and a calendar view that checks critical resources before confirmation."
+    tradeoff: "Custom validation increased development scope, but it was reserved for a high-risk workflow that standard scheduling could not fully represent."
+    impact: "Designed to reduce preventable booking conflicts and give reception a clearer real-time view of resource availability."
+    media_type: "youtube"
+    youtube_id: "k8kv6jTDD14"
+    media_title: "HT Beauty smart booking validation demo"
+    media_caption: "Demo of resource validation and booking controls in the proposed Odoo workflow."
+  - title: "CRM Lead Sync & Deduplication"
+    problem: "Leads from digital channels were manually copied into shared sheets, creating delays, inconsistent ownership, and duplicate records."
+    decision: "Use Odoo CRM and website lead capture as the central pipeline, supported by duplicate detection, assignment, activities, and traceable communication history."
+    tradeoff: "The design prioritized reliable first-party records over reproducing every familiar spreadsheet habit inside the new system."
+    impact: "Designed to shorten lead handoff time, reduce duplicate effort, and retain customer context across the funnel."
+    media_type: "youtube"
+    youtube_id: "LdJThQVXW48"
+    media_title: "HT Beauty CRM synchronization demo"
+    media_caption: "Demo of lead capture, pipeline synchronization, and duplicate-control behavior."
+  - title: "Treatment Lifecycle & Automated Follow-up"
+    problem: "Treatment plans, session counts, before-and-after records, and follow-up tasks were separated across paper and manual reminders."
+    decision: "Connect digital treatment plans, session records, progress evidence, and scheduled customer-service activities within one lifecycle."
+    tradeoff: "Automation was designed to generate accountable tasks rather than fully replace human judgment in customer communication."
+    impact: "Expected to improve continuity of information and support a lower no-show rate through structured reminders and follow-up."
+    media_type: "image"
+    image: "/assets/images/ht-beauty/automated-follow-up-cron-job.webp"
+    image_alt: "Automated customer follow-up tasks generated in the HT Beauty Odoo system"
+    media_title: "Automated follow-up evidence"
+    media_caption: "Add the existing Cron Job or generated-task screenshot using the file name shown in the fallback."
+
+evidence_enabled: true
+evidence_heading: "Documentation that explains why the solution took this shape."
+evidence_intro: "Only completed evidence is displayed. Each card opens a right-side reading view with selected findings, decisions, and a link to the original PDF."
+evidence:
+  - id: "ht-brd"
+    visible: true
+    type: "Business definition"
+    status: "Available"
+    title: "Business Requirement Document"
+    summary: "The business context, current operational problems, proposed system scope, dependencies, and requirement groups."
+    tags:
+      - "Business context"
+      - "Requirements"
+      - "Scope"
+    drawer_intro: "This document establishes why the project was needed and translates the clinic's operating problems into a structured business scope for Odoo implementation."
+    metrics:
+      - value: "4"
+        label: "Primary solution areas"
+      - value: "3"
+        label: "Affected system groups"
+    sections:
+      - title: "Current operational problems"
+        text: "The clinic relied on Google Sheets, Zalo, and paper for lead handling, appointment coordination, treatment records, and customer follow-up."
+        bullets:
+          - "Fragmented customer data and delayed lead processing."
+          - "Shared-sheet security and knowledge-retention risks."
+          - "Appointment conflicts involving staff and treatment rooms."
+          - "Manual reminders and paper-based treatment records."
+      - title: "Proposed solution scope"
+        text: "The proposed Odoo 19 Community ecosystem connects CRM, appointments, clinic operations, treatment records, and automation."
+        bullets:
+          - "Centralized multichannel lead management."
+          - "Smart booking with resource validation."
+          - "Digital medical and treatment records."
+          - "Automated reminder and after-care activities."
+      - title: "Dependencies and assumptions"
+        bullets:
+          - "Stable internet connectivity at the clinic."
+          - "Availability of Zalo ZNS or SMS integration services."
+          - "Successful cleansing and migration of legacy customer data."
+    file: "/assets/docs/ht-beauty/BRD_HT_Beauty.pdf"
+    download: true
+  - id: "ht-gap"
+    visible: true
+    type: "Solution fit"
+    status: "Available"
+    title: "Odoo Fit–Gap Analysis"
+    summary: "A requirement-by-requirement comparison of current workflows, target workflows, operational risk, and required intervention."
+    tags:
+      - "46 gaps"
+      - "Fit–gap"
+      - "Solution mix"
+    drawer_intro: "The analysis separates what Odoo can support as standard, what requires configuration, and what justifies custom development for clinic-specific operations."
+    metrics:
+      - value: "46"
+        label: "Operational gaps"
+      - value: "36.36%"
+        label: "Standard"
+      - value: "21.21%"
+        label: "Configuration"
+      - value: "42.43%"
+        label: "Customization"
+    sections:
+      - title: "How decisions were classified"
+        bullets:
+          - "Standard: existing Odoo capability could be adopted directly."
+          - "Configuration: the capability existed but required setup, access rules, or adjusted behavior."
+          - "Customization: clinic-specific data or logic required new development."
+      - title: "Representative standard and configuration decisions"
+        bullets:
+          - "Website-to-CRM lead capture and duplicate handling."
+          - "Scheduled activities for callbacks and pipeline follow-up."
+          - "Role-based access for managers, reception, and clinical staff."
+      - title: "Representative customization decisions"
+        bullets:
+          - "Multi-resource appointment validation."
+          - "Digital treatment plans and session tracking."
+          - "Bulk appointment creation and automated after-care tasks."
+    file: "/assets/docs/ht-beauty/Bang_Phan_Tich_GAP_HT_Beauty.pdf"
+    download: true
+  - id: "ht-bfd"
+    visible: true
+    type: "Process evidence"
+    status: "Available"
+    title: "AS-IS Business Flow Diagrams"
+    summary: "Ten cross-functional process flows showing handoffs among customers, customer service, reception, clinicians, and operational tools."
+    tags:
+      - "10 workflows"
+      - "AS-IS"
+      - "Cross-functional"
+    drawer_intro: "The diagrams make current-state handoffs visible before any solution is proposed, allowing requirements and ownership gaps to be traced back to real process steps."
+    metrics:
+      - value: "10"
+        label: "AS-IS workflows"
+    sections:
+      - title: "What the diagrams cover"
+        bullets:
+          - "Lead-to-opportunity and customer consultation."
+          - "Appointment booking and resource checking."
+          - "Reception, diagnosis, consultation, and payment."
+          - "Treatment scheduling, service delivery, follow-up, promotions, no-shows, and cancellations."
+      - title: "Why this evidence mattered"
+        text: "Cross-functional views revealed where data moved between people and tools, where decisions depended on memory, and where the system needed clearer ownership or automation."
+      - title: "How it influenced the solution"
+        text: "The process evidence became the baseline for the gap register, functional requirements, TO-BE workflows, and module boundaries."
+    file: "/assets/docs/ht-beauty/BPD_HT_Beauty.pdf"
+    download: true
+  - id: "ht-frd"
+    visible: true
+    type: "Functional specification"
+    status: "Available"
+    title: "Functional Requirements Document"
+    summary: "Detailed actors, priorities, system behaviors, validation rules, and Odoo support classifications for implementation and testing."
+    tags:
+      - "Actors"
+      - "Priority"
+      - "Validation"
+    drawer_intro: "The FRD converts business requirements into implementation-ready behavior for standard features, configuration, custom modules, and user validation."
+    metrics:
+      - value: "33"
+        label: "Functional requirements"
+      - value: "8"
+        label: "Primary actor groups"
+    sections:
+      - title: "Actors and responsibilities"
+        bullets:
+          - "Admin and clinic management."
+          - "Customer Service and Reception."
+          - "Doctors and Technicians."
+          - "System automation and external customers."
+      - title: "Functional coverage"
+        bullets:
+          - "Lead capture, import, filtering, duplicate control, and pipeline management."
+          - "Appointments, check-in, rooms, staff assignment, and conflict validation."
+          - "Treatment plans, sessions, clinical evidence, promotions, and sales linkage."
+          - "Automated reminders, follow-up tasks, reports, and security rules."
+      - title: "How it supported delivery"
+        text: "Each requirement connects actors, priority, expected behavior, and Odoo support status so development and validation can trace back to an agreed need."
+    file: "/assets/docs/ht-beauty/FRD_HT_Beauty.pdf"
+    download: true
+  - id: "ht-data"
+    visible: false
+    type: "Architecture"
+    status: "Hidden until available"
+    title: "Data Architecture & ERD"
+    summary: "Future standalone evidence for data structures and module relationships."
+    file: "/assets/docs/ht-beauty/Data_Architecture_ERD_HT_Beauty.pdf"
+  - id: "ht-uat"
+    visible: false
+    type: "Validation"
+    status: "Hidden until available"
+    title: "Testing & UAT Evidence"
+    summary: "Future standalone evidence for scenarios, test cases, defects, and sign-off."
+    file: "/assets/docs/ht-beauty/UAT_HT_Beauty.pdf"
+
+impact_heading: "Clearer scope, stronger traceability, and a more defensible implementation plan."
+impact_intro: "The project outputs are presented according to their evidence level. Analyzed counts are separated from estimated or expected operational effects."
+impact:
+  - label: "Analyzed"
+    value: "46"
+    text: "Operational gaps identified through end-to-end process analysis."
+  - label: "Documented"
+    value: "33"
+    text: "Functional requirements defined across the proposed ecosystem."
+  - label: "Estimated impact"
+    value: "~50%"
+    text: "Potential reduction in manual data-entry errors through connected workflows and reuse of shared data."
+  - label: "Expected impact"
+    value: "↓ No-shows"
+    text: "Structured reminders and follow-up tasks were designed to support better appointment attendance."
+impact_note: "The project did not use the previous claim of '100% double-booking conflicts resolved.' The portfolio distinguishes solution intent from measured production outcomes."
+
+reflection_heading: "What the project changed in the way I approach implementation."
+reflection_intro: "The reflection focuses on decisions, limitations, and what I would strengthen in another iteration."
+reflection:
+  - title: "What I am most proud of"
+    text: "I am most proud of turning a fragmented operational picture into a structured solution direction. Instead of treating each issue as an isolated request, I connected 46 gaps with business priorities, platform capabilities, and implementation decisions."
+  - title: "The most difficult part"
+    text: "The hardest part was balancing operational expectations with the boundaries of the platform. Not every problem required customization, and not every stakeholder request should become a feature."
+  - title: "What I would improve"
+    text: "I would involve end users earlier through shorter validation cycles. More frequent prototype reviews and scenario-based UAT would expose operational exceptions sooner and reduce late-stage requirement changes."
+
+next_project:
+  title: "Tra Anh Beverage"
+  url: "/projects/tra-anh/"
 ---
-
-> This is a safe placeholder page so the Home project link works immediately. Replace this body with your existing HT Beauty case-study content when you are ready to develop the project-detail page.
-
-## Project overview
-
-Add the business context, operational pain points, project scope, stakeholders, responsibilities, artifacts, solution, and outcomes here.

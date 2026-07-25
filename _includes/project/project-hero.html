@@ -1,0 +1,94 @@
+<header class="case-hero" id="project-top">
+  <div class="case-hero__grid" aria-hidden="true"></div>
+  <div class="case-hero__glow case-hero__glow--blue" aria-hidden="true"></div>
+  <div class="case-hero__glow case-hero__glow--gold" aria-hidden="true"></div>
+
+  <div class="project-container case-hero__inner">
+    <div class="case-hero__copy" data-project-reveal>
+      <a class="case-back-link" href="{{ '/' | relative_url }}#projects">
+        <span aria-hidden="true">←</span> Back to selected projects
+      </a>
+
+      <p class="project-kicker">{{ page.category }}</p>
+      <h1>{{ page.title }}</h1>
+      <p class="case-hero__subtitle">{{ page.subtitle }}</p>
+      <p class="case-hero__description">{{ page.description }}</p>
+
+      {% if page.tools %}
+        <ul class="case-tags" aria-label="Project tools and methods">
+          {% for tool in page.tools %}<li>{{ tool }}</li>{% endfor %}
+        </ul>
+      {% endif %}
+
+      <div class="case-hero__actions">
+        <a class="project-button project-button--gold" href="#project-overview">
+          Explore the case study <span aria-hidden="true">↓</span>
+        </a>
+        {% if page.source_code %}
+          <a class="project-button project-button--ghost" href="{{ page.source_code }}" target="_blank" rel="noopener noreferrer">
+            View source code <span aria-hidden="true">↗</span>
+          </a>
+        {% endif %}
+      </div>
+    </div>
+
+    <div class="case-hero__visual" data-project-reveal data-project-delay="120">
+      {% if page.hero_visual == 'ht-ecosystem' %}
+        <div class="ecosystem-visual" role="img" aria-label="HT Beauty operational ecosystem connecting CRM, appointment, treatment, and after-care workflows">
+          <div class="ecosystem-visual__orbit ecosystem-visual__orbit--one"></div>
+          <div class="ecosystem-visual__orbit ecosystem-visual__orbit--two"></div>
+          <div class="ecosystem-visual__core">
+            <span>HT</span>
+            <strong>Beauty</strong>
+            <small>Odoo ecosystem</small>
+          </div>
+          <div class="ecosystem-node ecosystem-node--crm"><span>01</span><strong>CRM</strong><small>Lead & customer data</small></div>
+          <div class="ecosystem-node ecosystem-node--booking"><span>02</span><strong>Booking</strong><small>People, rooms & time</small></div>
+          <div class="ecosystem-node ecosystem-node--treatment"><span>03</span><strong>Treatment</strong><small>Plans & sessions</small></div>
+          <div class="ecosystem-node ecosystem-node--care"><span>04</span><strong>After-care</strong><small>Tasks & reminders</small></div>
+          <div class="ecosystem-visual__pulse"></div>
+          {% if page.hero_image_visible and page.hero_image %}
+            <figure class="ecosystem-visual__preview">
+              <img src="{{ page.hero_image | relative_url }}" alt="HT Beauty Odoo project interface" loading="eager" data-project-image>
+            </figure>
+          {% endif %}
+        </div>
+      {% elsif page.hero_visual == 'tra-anh-prototype' %}
+        <div class="ordering-visual" role="img" aria-label="Mobile ordering prototype showing choose, customize, confirm, and track steps">
+          <div class="ordering-phone">
+            <div class="ordering-phone__speaker"></div>
+            <div class="ordering-phone__screen">
+              <div class="ordering-appbar"><span>Tra Anh</span><span>•••</span></div>
+              <div class="ordering-drink">
+                <span class="ordering-drink__cup" aria-hidden="true">🥤</span>
+                <div><strong>Signature Milk Tea</strong><small>Build your drink</small></div>
+              </div>
+              <div class="ordering-options">
+                <span class="is-active">M</span><span>L</span><span>Less ice</span>
+              </div>
+              <div class="ordering-progress">
+                <span class="is-done"></span><span class="is-done"></span><span class="is-active"></span><span></span>
+              </div>
+              <div class="ordering-status"><small>ORDER STATUS</small><strong>Ready for pickup</strong><span>12:40 PM</span></div>
+              <div class="ordering-cta">Confirm order <span>→</span></div>
+            </div>
+          </div>
+          <ol class="ordering-steps">
+            <li><span>01</span><strong>Choose</strong></li>
+            <li><span>02</span><strong>Customize</strong></li>
+            <li><span>03</span><strong>Confirm</strong></li>
+            <li><span>04</span><strong>Track</strong></li>
+          </ol>
+        </div>
+      {% endif %}
+    </div>
+
+    {% if page.project_meta %}
+      <dl class="case-meta" data-project-reveal data-project-delay="180">
+        {% for item in page.project_meta %}
+          <div><dt>{{ item.label }}</dt><dd>{{ item.value }}</dd></div>
+        {% endfor %}
+      </dl>
+    {% endif %}
+  </div>
+</header>

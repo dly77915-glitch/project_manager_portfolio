@@ -1,0 +1,23 @@
+<section class="project-section project-section--navy" id="project-journey">
+  <div class="project-container">
+    <div class="project-heading project-heading--split project-heading--light" data-project-reveal>
+      <div>
+        <p class="project-kicker project-kicker--gold">From ambiguity to direction</p>
+        <h2>{{ page.journey_heading }}</h2>
+      </div>
+      <p>{{ page.journey_intro }}</p>
+    </div>
+
+    <div class="journey-track" data-journey-track>
+      <span class="journey-track__line" aria-hidden="true"><span data-journey-progress></span></span>
+      {% for item in page.journey %}
+        <article class="journey-step" data-project-reveal data-project-delay="{{ forloop.index0 | times: 60 }}">
+          <span class="journey-step__number">0{{ forloop.index }}</span>
+          <h3>{{ item.title }}</h3>
+          <p>{{ item.text }}</p>
+          <small>{{ item.output }}</small>
+        </article>
+      {% endfor %}
+    </div>
+  </div>
+</section>

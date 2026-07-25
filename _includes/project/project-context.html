@@ -1,0 +1,25 @@
+<section class="project-section project-section--soft" id="project-context">
+  <div class="project-container context-layout">
+    <div class="project-heading" data-project-reveal>
+      <p class="project-kicker">{{ page.context.kicker }}</p>
+      <h2>{{ page.context.title }}</h2>
+      <p>{{ page.context.intro }}</p>
+    </div>
+
+    <div class="context-copy" data-project-reveal data-project-delay="80">
+      {% for paragraph in page.context.paragraphs %}<p>{{ paragraph }}</p>{% endfor %}
+    </div>
+
+    {% if page.context.flow %}
+      <div class="context-flow" aria-label="Current workflow" data-project-reveal>
+        {% for item in page.context.flow %}
+          <div class="context-flow__item">
+            <span>{{ forloop.index | prepend: '0' }}</span>
+            <strong>{{ item }}</strong>
+          </div>
+          {% unless forloop.last %}<span class="context-flow__arrow" aria-hidden="true">→</span>{% endunless %}
+        {% endfor %}
+      </div>
+    {% endif %}
+  </div>
+</section>

@@ -1,0 +1,56 @@
+<section class="project-section project-section--light" id="project-solutions">
+  <div class="project-container">
+    <div class="project-heading project-heading--split" data-project-reveal>
+      <div>
+        <p class="project-kicker">Decisions that shaped the solution</p>
+        <h2>{{ page.solutions_heading }}</h2>
+      </div>
+      <p>{{ page.solutions_intro }}</p>
+    </div>
+
+    <div class="solution-list">
+      {% for solution in page.solutions %}
+        <article class="solution-block{% cycle '', ' solution-block--reverse' %}" data-project-reveal>
+          <div class="solution-block__copy">
+            <p class="solution-block__index">Solution 0{{ forloop.index }}</p>
+            <h3>{{ solution.title }}</h3>
+
+            <dl class="solution-details">
+              <div><dt>Problem</dt><dd>{{ solution.problem }}</dd></div>
+              <div><dt>Decision</dt><dd>{{ solution.decision }}</dd></div>
+              <div><dt>Trade-off</dt><dd>{{ solution.tradeoff }}</dd></div>
+              <div><dt>Intended impact</dt><dd>{{ solution.impact }}</dd></div>
+            </dl>
+          </div>
+
+          {% if solution.media_type == 'youtube' %}
+            <div class="project-video solution-block__media">
+              <iframe
+                src="https://www.youtube-nocookie.com/embed/{{ solution.youtube_id }}?rel=0&playsinline=1&controls=1"
+                title="{{ solution.media_title }}"
+                loading="lazy"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowfullscreen
+              ></iframe>
+              {% if solution.media_caption %}<p>{{ solution.media_caption }}</p>{% endif %}
+            </div>
+          {% elsif solution.media_type == 'image' %}
+            <figure class="solution-block__media solution-image">
+              <img src="{{ solution.image | relative_url }}" alt="{{ solution.image_alt }}" loading="lazy" data-project-image>
+              <div class="solution-image__fallback" hidden>
+                <span aria-hidden="true">◎</span>
+                <strong>{{ solution.media_title }}</strong>
+                <small>Add the image at:<br><code>{{ solution.image }}</code></small>
+              </div>
+              {% if solution.media_caption %}<figcaption>{{ solution.media_caption }}</figcaption>{% endif %}
+            </figure>
+          {% else %}
+            <div class="solution-block__media solution-diagram" aria-label="{{ solution.title }} conceptual flow">
+              <span>{{ solution.diagram_start }}</span><i aria-hidden="true">→</i><span>{{ solution.diagram_middle }}</span><i aria-hidden="true">→</i><span>{{ solution.diagram_end }}</span>
+            </div>
+          {% endif %}
+        </article>
+      {% endfor %}
+    </div>
+  </div>
+</section>

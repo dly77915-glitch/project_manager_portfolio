@@ -1,0 +1,21 @@
+<section class="project-section project-section--soft" id="project-challenges">
+  <div class="project-container">
+    <div class="project-heading" data-project-reveal>
+      <p class="project-kicker">Core challenges</p>
+      <h2>{{ page.challenges_heading }}</h2>
+      <p>{{ page.challenges_intro }}</p>
+    </div>
+
+    <div class="challenge-grid">
+      {% for item in page.challenges %}
+        <article class="challenge-card" data-project-reveal data-project-delay="{{ forloop.index0 | times: 70 }}">
+          <span class="challenge-card__number">0{{ forloop.index }}</span>
+          <h3>{{ item.title }}</h3>
+          <div><strong>What was happening</strong><p>{{ item.situation }}</p></div>
+          <div><strong>Why it mattered</strong><p>{{ item.impact }}</p></div>
+          <div><strong>What made it difficult</strong><p>{{ item.difficulty }}</p></div>
+        </article>
+      {% endfor %}
+    </div>
+  </div>
+</section>

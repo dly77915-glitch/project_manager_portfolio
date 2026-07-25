@@ -1,0 +1,38 @@
+<section class="project-section project-section--light" id="project-role">
+  <div class="project-container">
+    <div class="project-heading project-heading--split" data-project-reveal>
+      <div>
+        <p class="project-kicker">My role & ownership</p>
+        <h2>{{ page.collaboration.title }}</h2>
+      </div>
+      <p>{{ page.collaboration.intro }}</p>
+    </div>
+
+    <div class="collaboration-grid">
+      <article class="ownership-panel" data-project-reveal>
+        <p class="panel-label">What I owned</p>
+        <ul>
+          {% for item in page.collaboration.ownership %}
+            <li><span aria-hidden="true">✓</span><p>{{ item }}</p></li>
+          {% endfor %}
+        </ul>
+      </article>
+
+      <div class="stakeholder-map" data-project-reveal data-project-delay="100">
+        <div class="stakeholder-map__center">
+          <span>{{ page.role_short }}</span>
+          <strong>{{ page.role }}</strong>
+        </div>
+        {% for group in page.collaboration.stakeholder_groups %}
+          <article class="stakeholder-group stakeholder-group--{{ forloop.index }}">
+            <p>{{ group.label }}</p>
+            <ul>{% for person in group.people %}<li>{{ person }}</li>{% endfor %}</ul>
+          </article>
+        {% endfor %}
+        <span class="stakeholder-line stakeholder-line--one" aria-hidden="true"></span>
+        <span class="stakeholder-line stakeholder-line--two" aria-hidden="true"></span>
+        <span class="stakeholder-line stakeholder-line--three" aria-hidden="true"></span>
+      </div>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,19 @@
+<section class="project-section project-section--light" id="project-reflection">
+  <div class="project-container">
+    <div class="project-heading" data-project-reveal>
+      <p class="project-kicker">Reflection</p>
+      <h2>{{ page.reflection_heading }}</h2>
+      <p>{{ page.reflection_intro }}</p>
+    </div>
+
+    <div class="reflection-grid">
+      {% for item in page.reflection %}
+        <article class="reflection-card" data-project-reveal data-project-delay="{{ forloop.index0 | times: 70 }}">
+          <span>0{{ forloop.index }}</span>
+          <h3>{{ item.title }}</h3>
+          <p>{{ item.text }}</p>
+        </article>
+      {% endfor %}
+    </div>
+  </div>
+</section>

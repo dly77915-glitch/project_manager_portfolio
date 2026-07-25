@@ -1,17 +1,30 @@
 ---
 layout: default
 ---
-<article class="project-detail">
-  <header class="project-detail__hero">
-    <div class="site-container">
-      <a class="project-detail__back" href="{{ '/' | relative_url }}#projects">← Back to projects</a>
-      {% if page.role %}<p class="eyebrow">{{ page.role }}</p>{% endif %}
-      <h1>{{ page.title }}</h1>
-      {% if page.summary %}<p class="project-detail__summary">{{ page.summary }}</p>{% endif %}
-    </div>
-  </header>
+<article class="case-study case-study--{{ page.project_key | default: page.slug }}">
+  {% include project/project-hero.html %}
+  {% include project/project-snapshot.html %}
 
-  <div class="project-detail__content site-container prose">
-    {{ content }}
-  </div>
+  {% if page.demo.visible and page.demo.position == 'early' %}
+    {% include project/project-demo.html demo=page.demo %}
+  {% endif %}
+
+  {% include project/project-context.html %}
+  {% include project/project-collaboration.html %}
+  {% include project/project-journey.html %}
+  {% include project/project-challenges.html %}
+  {% include project/project-solutions.html %}
+
+  {% if page.demo.visible and page.demo.position == 'after_solutions' %}
+    {% include project/project-demo.html demo=page.demo %}
+  {% endif %}
+
+  {% if page.evidence_enabled %}
+    {% include project/project-evidence.html %}
+  {% endif %}
+
+  {% include project/project-impact.html %}
+  {% include project/project-reflection.html %}
+  {% include project/project-navigation.html %}
+  {% include project/evidence-drawer.html %}
 </article>

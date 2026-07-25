@@ -1,0 +1,24 @@
+<nav class="project-navigation" aria-label="Project navigation">
+  <div class="project-container project-navigation__inner">
+    <a class="project-navigation__home" href="{{ '/' | relative_url }}#projects">
+      <span aria-hidden="true">←</span>
+      <small>Return to portfolio</small>
+      <strong>Selected Projects</strong>
+    </a>
+
+    <div class="project-navigation__actions">
+      {% if page.next_project %}
+        <a href="{{ page.next_project.url | relative_url }}">
+          <small>Next project</small>
+          <strong>{{ page.next_project.title }}</strong>
+          <span aria-hidden="true">→</span>
+        </a>
+      {% endif %}
+      <button type="button" data-cv-open>
+        <small>Profile</small>
+        <strong>View CV</strong>
+        <span aria-hidden="true">↗</span>
+      </button>
+    </div>
+  </div>
+</nav>

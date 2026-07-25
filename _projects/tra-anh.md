@@ -1,11 +1,270 @@
 ---
-title: "Trà Anh Digital Ordering"
+title: "Tra Anh Beverage"
+project_key: "tra-anh"
+category: "Digital Product Design · F&B Ordering Experience"
+subtitle: "Reimagining the ordering experience from handwritten tickets to a connected digital flow."
+description: "A system-analysis and product-design case study focused on reducing manual order errors, coordinating multiple service actors, and designing a first-party digital ordering experience."
 role: "Business Analyst"
-summary: "End-to-end ordering workflow redesign, data modeling, and mobile experience prototyping."
+role_short: "BA"
+hero_visual: "tra-anh-prototype"
+tools:
+  - "BPMN"
+  - "UML"
+  - "Figma"
+  - "Draw.io"
+  - "Waterfall"
+project_meta:
+  - label: "Role"
+    value: "Business Analyst"
+  - label: "Duration"
+    value: "Sep 2025 – Dec 2025"
+  - label: "Team"
+    value: "5 members"
+  - label: "Domain"
+    value: "F&B · E-commerce · Digital Ordering"
+  - label: "Methodology"
+    value: "Waterfall"
+
+snapshot_heading: "An everyday ordering problem became an end-to-end service design challenge."
+snapshot_intro: "The project examined not only the customer interface, but also the information flow connecting cashiers, baristas, delivery partners, and store management."
+snapshot:
+  - title: "The context"
+    text: "Paper tickets and manual handoffs were used to manage product choices, customization, payment, preparation, and order completion."
+  - title: "The challenge"
+    text: "The experience had to support flexible drink customization without increasing errors or creating more work for the preparation team."
+  - title: "The direction"
+    text: "A first-party Order & Pick-up concept connected guided customization, shared status logic, and structured customer data."
+  - title: "My contribution"
+    text: "I worked across current-state analysis, requirements, UML modeling, database design, user flows, and interface validation."
+
+demo:
+  visible: true
+  position: "after_solutions"
+  id: "prototype-demo"
+  kicker: "Prototype demo"
+  title: "A guided flow for complex beverage customization."
+  description: "The prototype demonstrates how size, sugar, ice, toppings, notes, quantity, and confirmation can be structured without overwhelming the customer or the preparation team."
+  youtube_id: "jk7XDpeFRec"
+  video_title: "Tra Anh complex customization flow prototype"
+
+context:
+  kicker: "Why this project mattered"
+  title: "Peak-hour pressure exposed the limits of paper-based coordination."
+  intro: "Manual ordering was more than a front-counter inconvenience. Each handwritten choice had to remain accurate as the order moved through several people and service stages."
+  paragraphs:
+    - "Interviews and current-state analysis identified common issues such as missing toppings, incorrect sizes, long waiting times, disordered paper tickets, manual calculation errors, and slow end-of-day reconciliation."
+    - "The case study also considered reliance on third-party platforms. A 20–30% commission range was used as a research assumption—not a measured cost from the store—to explore the value of a first-party ordering and customer-data channel."
+  flow:
+    - "Customer orders"
+    - "Cashier records"
+    - "Barista prepares"
+    - "Order waits"
+    - "Pickup or delivery"
+
+collaboration:
+  title: "I connected customer needs with service operations and system behavior."
+  intro: "The work required moving between qualitative research, process logic, data relationships, and interface decisions so the proposed experience remained understandable for every actor."
+  ownership:
+    - "Analyzed the current ordering process and documented observed customer and employee pain points."
+    - "Defined functional and non-functional requirements for ordering, payment, fulfillment, and support."
+    - "Modeled Use Cases, Activities, Sequences, Classes, and database relationships."
+    - "Designed the end-to-end user flow and interface behavior for complex beverage customization."
+    - "Connected order statuses and data rules across customers, cashiers, baristas, shippers, and management."
+  stakeholder_groups:
+    - label: "Customer side"
+      people:
+        - "Customer"
+        - "Shipper"
+    - label: "Store operations"
+      people:
+        - "Cashier"
+        - "Barista"
+        - "Store Manager"
+    - label: "Delivery"
+      people:
+        - "Project Team"
+
+journey_heading: "Research, model, design, and validate one connected ordering experience."
+journey_intro: "The project followed a Waterfall structure, with each artifact building on the evidence and decisions produced in the previous stage."
+journey:
+  - title: "Discover"
+    text: "Collected input through interviews, questionnaires, document research, and analysis of the current ordering experience."
+    output: "13 interview participants · current-state findings"
+  - title: "Align"
+    text: "Organized the needs of customers, employees, delivery partners, and management into a shared project scope."
+    output: "Stakeholder needs · system boundary"
+  - title: "Define"
+    text: "Specified functional and non-functional requirements for ordering, payment, status tracking, support, and administration."
+    output: "Requirement catalogue · use cases"
+  - title: "Model"
+    text: "Visualized behavior and data through Activity, Sequence, Class, and Entity-Relationship models."
+    output: "UML · ERD · constraints"
+  - title: "Design"
+    text: "Turned requirements into guided customization, checkout, tracking, loyalty, and administration interfaces."
+    output: "User flows · wireframes · prototype"
+  - title: "Validate"
+    text: "Reviewed whether the proposed interaction and system logic could support real ordering scenarios without hidden handoff gaps."
+    output: "Prototype walkthrough · scenario review"
+
+challenges_heading: "Three design problems defined the product direction."
+challenges_intro: "The selected challenges connect customer experience with operational accuracy, service coordination, and long-term business ownership of data."
+challenges:
+  - title: "Complex beverage customization"
+    situation: "Customers could combine size, sugar, ice, toppings, notes, and quantity in many different ways."
+    impact: "A missing or unclear option could create incorrect drinks, rework, complaints, and slower peak-hour service."
+    difficulty: "The flow needed to be flexible enough for customers while still producing structured instructions for the barista."
+  - title: "Multi-actor order coordination"
+    situation: "Customers, cashiers, baristas, and shippers depended on manual updates and physical ticket handoffs."
+    impact: "Orders could be overlooked, completed late, or handed to the wrong pickup or delivery flow."
+    difficulty: "Each actor needed a relevant view of the same order lifecycle without introducing contradictory statuses."
+  - title: "Limited first-party customer data"
+    situation: "Third-party ordering channels could complete transactions without giving the store a direct customer relationship."
+    impact: "The store had fewer opportunities to understand repeat behavior, support retention, or build loyalty experiences."
+    difficulty: "The proposed capability had to create value without assuming that the store had already implemented a full CRM program."
+
+solutions_heading: "Three connected decisions turned the concept into a coherent service flow."
+solutions_intro: "The solutions were designed as one system: accurate customization feeds a shared order lifecycle, which in turn creates structured first-party data."
+solutions:
+  - title: "Guided Customization & Validation"
+    problem: "Paper tickets made it easy to miss required details or misread size, sugar, ice, topping, note, and quantity choices."
+    decision: "Create a step-by-step Add to Cart flow that validates required selections before an item can be confirmed."
+    tradeoff: "More structure reduces ordering errors, but the interface must avoid making a simple drink purchase feel slow or rigid."
+    impact: "Designed to improve order accuracy and deliver clearer preparation instructions during peak periods."
+    media_type: "none"
+    diagram_start: "Choose"
+    diagram_middle: "Customize"
+    diagram_end: "Confirm"
+  - title: "Shared Order Status Lifecycle"
+    problem: "Manual handoffs provided no consistent status view for customers, cashiers, baristas, and shippers."
+    decision: "Define one controlled lifecycle from confirmation and preparation to pickup, delivery, completion, or failure."
+    tradeoff: "A shared lifecycle improves visibility, but status permissions and transition rules must remain simple enough for daily store use."
+    impact: "Designed to reduce overlooked orders and make service progress visible to the actor responsible for the next step."
+    media_type: "none"
+    diagram_start: "Preparing"
+    diagram_middle: "Ready"
+    diagram_end: "Completed"
+  - title: "Customer Profile & Loyalty Data Structure"
+    problem: "A transaction completed through an external platform did not automatically create a reusable first-party customer relationship."
+    decision: "Design customer, order-history, promotion, review, and loyalty-related data structures as part of the proposed platform."
+    tradeoff: "The design establishes a future capability, but it does not claim that loyalty operations or measurable retention outcomes were implemented."
+    impact: "Creates a foundation for future segmentation, support history, personalized offers, and repeat-purchase analysis."
+    media_type: "none"
+    diagram_start: "Profile"
+    diagram_middle: "Order history"
+    diagram_end: "Loyalty"
+
+evidence_enabled: true
+evidence_heading: "A consolidated view of the analysis and design work."
+evidence_intro: "The full academic report remains private. This text-based drawer presents selected project evidence without exposing the original team report or personal academic information."
+evidence:
+  - id: "tra-analysis-report"
+    visible: true
+    type: "Consolidated project evidence"
+    status: "Text summary"
+    title: "System Analysis & Design Report"
+    summary: "Selected research findings, process decisions, system models, data architecture, and interface-design work from the project."
+    tags:
+      - "Research"
+      - "UML"
+      - "ERD"
+      - "Prototype"
+    drawer_intro: "This reading view condenses the most relevant evidence from the project while keeping the full team report private."
+    metrics:
+      - value: "13"
+        label: "Interview participants"
+      - value: "5"
+        label: "Project members"
+      - value: "4"
+        label: "Major evidence areas"
+    sections:
+      - title: "Research & discovery"
+        text: "The team used interviews, questionnaires, document research, and analysis of comparable ordering systems to understand current behavior and expectations."
+        bullets:
+          - "Employees reported paper-ticket confusion, manual calculation risk, and slow daily reconciliation."
+          - "Customers reported missing toppings, incorrect sizes, waiting time, and limited complaint visibility."
+          - "The research focused on customers purchasing in-store and through phone, fanpage, or website channels."
+      - title: "Process & requirements"
+        text: "Findings were translated into functional and non-functional requirements covering selection, customization, ordering, payment, fulfillment, delivery, support, and administration."
+        bullets:
+          - "Required quantity selection before confirmation."
+          - "Optional topping and note behavior within a controlled flow."
+          - "Order status transitions for pickup and delivery scenarios."
+          - "Validation rules for accounts, orders, payments, and promotions."
+      - title: "System modeling"
+        text: "Use Case, Activity, Sequence, and Class diagrams were used to explain system responsibilities, interaction order, and structural relationships."
+        bullets:
+          - "Customer ordering and checkout interactions."
+          - "Cashier, barista, shipper, and manager coordination."
+          - "System responses for order status and exceptions."
+      - title: "Data architecture"
+        text: "The design included customer, account, cart, order, invoice, promotion, review, and reporting entities with domain and referential constraints."
+        bullets:
+          - "Phone-number and account validation."
+          - "Controlled order-status values."
+          - "Relationships among customers, orders, invoices, and promotions."
+      - title: "Interface design"
+        text: "Wireframes and prototypes translated the system logic into an end-to-end mobile experience, with particular attention to customization and confirmation."
+        bullets:
+          - "Menu and product-selection experience."
+          - "Guided drink customization."
+          - "Checkout, payment, order tracking, and support."
+  - id: "tra-bpd"
+    visible: false
+    type: "Process evidence"
+    status: "Hidden until available"
+    title: "AS-IS & TO-BE Business Process Design"
+    summary: "Future standalone process document."
+    file: "/assets/docs/tra-anh/BPD_Tra_Anh.pdf"
+  - id: "tra-frd"
+    visible: false
+    type: "Functional specification"
+    status: "Hidden until available"
+    title: "Functional Requirements Document"
+    summary: "Future standalone requirement document."
+    file: "/assets/docs/tra-anh/FRD_Tra_Anh.pdf"
+  - id: "tra-data"
+    visible: false
+    type: "Data architecture"
+    status: "Hidden until available"
+    title: "Data Model & ERD"
+    summary: "Future standalone data-model document."
+    file: "/assets/docs/tra-anh/Data_Model_Tra_Anh.pdf"
+  - id: "tra-ui"
+    visible: false
+    type: "Design evidence"
+    status: "Hidden until available"
+    title: "UI Prototype Documentation"
+    summary: "Future standalone interface and prototype document."
+    file: "/assets/docs/tra-anh/UI_Prototype_Tra_Anh.pdf"
+
+impact_heading: "A testable product direction—not an overstated production result."
+impact_intro: "Because the project focused on analysis and design, the outcomes emphasize validated scope, traceable decisions, and implementation-ready models rather than claiming live operational performance."
+impact:
+  - label: "Research basis"
+    value: "13"
+    text: "Interview participants informed the current-state findings and user expectations."
+  - label: "Observed issue"
+    value: "Paper errors"
+    text: "Manual tickets were linked to missing toppings, incorrect sizes, and disordered handoffs."
+  - label: "Research assumption"
+    value: "20–30%"
+    text: "Commission range considered when evaluating dependence on third-party ordering platforms."
+  - label: "Designed capability"
+    value: "1st-party flow"
+    text: "A connected ordering, status, customer-data, and loyalty foundation was proposed."
+impact_note: "Customer profiles and loyalty were designed capabilities only. The portfolio does not present them as implemented features or measured commercial outcomes."
+
+reflection_heading: "What the project taught me about designing beyond the screen."
+reflection_intro: "The strongest learning came from connecting interface choices with operational handoffs and data rules."
+reflection:
+  - title: "What I am most proud of"
+    text: "I am most proud of transforming an everyday operational problem into a connected end-to-end ordering experience. The solution considered how information should move among customers, cashiers, baristas, and delivery partners—not only what the customer sees."
+  - title: "The most difficult part"
+    text: "The hardest part was designing a customization flow that remained flexible without becoming confusing. Every size, topping, quantity, and note created new combinations that had to stay clear for both customers and the preparation team."
+  - title: "What I would improve"
+    text: "I would test the prototype with a broader range of customers and store staff, and establish baseline metrics for order time, error frequency, and peak-hour throughput before evaluating the solution."
+
+next_project:
+  title: "HT Beauty Clinic"
+  url: "/projects/ht-beauty/"
 ---
-
-> This is a safe placeholder page so the Home project link works immediately. Replace this body with your existing Trà Anh case-study content when you are ready to develop the project-detail page.
-
-## Project overview
-
-Add the business context, peak-hour bottlenecks, requirements, workflows, system logic, prototype, and outcomes here.
