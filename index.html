@@ -1,7 +1,7 @@
 ---
 layout: default
-title: Digital Project Manager Portfolio
-description: Phuong Thao's Digital Project Manager portfolio — connecting business strategy, technology execution, data, and design.
+title: Digital Project Management Portfolio
+description: Phuong Thao's Digital Project Management portfolio — connecting business strategy, technology execution, data, design, and people.
 ---
 
 <section class="hero" id="home" aria-labelledby="hero-title">
@@ -9,14 +9,14 @@ description: Phuong Thao's Digital Project Manager portfolio — connecting busi
 
   <div class="site-container hero__inner">
     <div class="hero__content">
-      <p class="hero__role hero-enter" style="--enter-delay: 0.05s;">Digital Project Manager</p>
+      <p class="hero__role hero-enter" style="--enter-delay: 0.05s;">Digital Project Management</p>
       <h1 class="hero-enter" id="hero-title" style="--enter-delay: 0.14s;">Hello, I’m <span>Phuong Thao.</span></h1>
       <p class="hero__description hero-enter" style="--enter-delay: 0.25s;">
         I bridge the gap between business strategy and technology execution. My focus is on untangling operational bottlenecks and delivering digital solutions that drive real, measurable impact.
       </p>
 
       <div class="hero__actions hero-enter" style="--enter-delay: 0.36s;">
-        <a class="button button--gold" href="{{ '/cv.pdf' | relative_url }}" target="_blank" rel="noopener">View CV <span aria-hidden="true">↗</span></a>
+        <button class="button button--gold" type="button" data-cv-open>View CV <span aria-hidden="true">→</span></button>
         <a class="button button--light" href="#projects">View Projects <span aria-hidden="true">↓</span></a>
         <a class="button button--ghost" href="{{ site.author.linkedin }}" target="_blank" rel="noopener">LinkedIn <span aria-hidden="true">↗</span></a>
       </div>
@@ -40,74 +40,79 @@ description: Phuong Thao's Digital Project Manager portfolio — connecting busi
   <div class="site-container">
     <div class="section-heading section-heading--split">
       <div>
-        <p class="eyebrow" data-reveal>Beyond the job title</p>
-        <h2 id="story-heading" data-reveal>My<span>...</span></h2>
+        <p class="eyebrow" data-reveal>What Shapes Me</p>
+        <h2 id="story-heading" data-reveal>About me</h2>
       </div>
       <p data-reveal>
-        Five ideas that shape how I learn, take responsibility, and show up when a problem needs clarity.
+        Not a list of strengths, but the patterns I return to when I am learning, deciding, and finding my way forward.
       </p>
     </div>
 
     <div class="story-carousel" data-story-carousel>
-      <div class="story-carousel__track" data-story-track tabindex="0" aria-label="My story cards">
+      <div class="story-carousel__track" data-story-track tabindex="0" aria-label="Five cards about Phuong Thao">
         <article class="story-card story-card--blue" data-reveal>
           <div class="story-card__top">
             <span>01</span>
-            <p>System perspective</p>
+            <p>Listening first</p>
           </div>
-          <h3>… mindset</h3>
-          <p>I look beyond the surface to understand the entire ecosystem. By connecting the dots between people, processes, and technology, I build solutions that truly work.</p>
-          <div class="story-card__media story-card__media--mindset" role="img" aria-label="Abstract systems illustration placeholder">
-            <span>People</span><span>Process</span><span>Technology</span>
-          </div>
+          <h3>My mindset</h3>
+          <p>I rarely rush to conclusions. I prefer to listen, observe, and understand what lies beneath the surface before deciding what I truly think about something.</p>
+          <figure class="story-card__media">
+            <img src="{{ '/assets/images/story/my-mindset.webp' | relative_url }}" alt="A personal visual representing careful observation and reflection" loading="lazy">
+            <figcaption><span>Listen</span><span>Observe</span><span>Understand</span></figcaption>
+          </figure>
         </article>
 
         <article class="story-card story-card--sky" data-reveal>
           <div class="story-card__top">
             <span>02</span>
-            <p>Growth mindset</p>
+            <p>Questioning deeper</p>
           </div>
-          <h3>… endless learning process</h3>
-          <p>The digital landscape shifts rapidly, and I thrive within that chaos. I constantly absorb new frameworks, operational models, and technologies to stay ahead of the curve.</p>
-          <div class="story-card__media story-card__media--learning" role="img" aria-label="Abstract learning illustration placeholder">
-            <span>Learn</span><span>Apply</span><span>Reflect</span>
-          </div>
+          <h3>My curiosity</h3>
+          <p>My curiosity rarely lets me stop at the first answer. I enjoy exploring unfamiliar ideas, asking better questions, and learning until the bigger picture begins to make sense.</p>
+          <figure class="story-card__media">
+            <img src="{{ '/assets/images/story/my-curiosity.webp' | relative_url }}" alt="A personal visual representing curiosity and exploration" loading="lazy">
+            <figcaption><span>Explore</span><span>Question</span><span>Connect</span></figcaption>
+          </figure>
         </article>
 
         <article class="story-card story-card--gold" data-reveal>
           <div class="story-card__top">
             <span>03</span>
-            <p>Trusted problem-solver</p>
+            <p>Being dependable</p>
           </div>
-          <h3>… motivation</h3>
-          <p>I strive to be the ultimate problem-solver. When teams face a roadblock, I want to be the first person they trust to navigate them toward success.</p>
-          <div class="story-card__media story-card__media--motivation" role="img" aria-label="Abstract problem solving illustration placeholder">
-            <span>Roadblock</span><span>Clarity</span><span>Progress</span>
-          </div>
+          <h3>My motivation</h3>
+          <p>I strive to be someone others can rely on when things feel unclear. Helping people find direction and move forward is what gives my effort meaning.</p>
+          <figure class="story-card__media">
+            <img src="{{ '/assets/images/story/my-motivation.webp' | relative_url }}" alt="A personal visual representing guidance, trust, and forward movement" loading="lazy">
+            <figcaption><span>Trust</span><span>Direction</span><span>Progress</span></figcaption>
+          </figure>
         </article>
 
         <article class="story-card story-card--navy" data-reveal>
           <div class="story-card__top">
             <span>04</span>
-            <p>Accountability</p>
+            <p>Following through</p>
           </div>
-          <h3>… ownership</h3>
-          <p>I treat every project as if it were my own company. I take bold initiatives, make decisive choices, and take full accountability for the final outcome.</p>
-          <div class="story-card__media story-card__media--ownership" role="img" aria-label="Abstract ownership illustration placeholder">
-            <span>Initiate</span><span>Decide</span><span>Deliver</span>
-          </div>
+          <h3>My ownership</h3>
+          <p>I care deeply about what I choose to take on. Once I commit, I stay present, make thoughtful decisions, and take responsibility for how things turn out.</p>
+          <figure class="story-card__media">
+            <img src="{{ '/assets/images/story/my-ownership.webp' | relative_url }}" alt="A personal visual representing commitment and responsibility" loading="lazy">
+            <figcaption><span>Commit</span><span>Decide</span><span>Own</span></figcaption>
+          </figure>
         </article>
 
         <article class="story-card story-card--cobalt" data-reveal>
           <div class="story-card__top">
             <span>05</span>
-            <p>Future direction</p>
+            <p>Leading with empathy</p>
           </div>
-          <h3>… ambition</h3>
-          <p>My ultimate goal is to lead impactful digital transformations. I aspire to orchestrate innovative ecosystems that redefine how businesses operate and deliver value to users.</p>
-          <div class="story-card__media story-card__media--ambition" role="img" aria-label="Abstract digital transformation illustration placeholder">
-            <span>Vision</span><span>Alignment</span><span>Impact</span>
-          </div>
+          <h3>My ambition</h3>
+          <p>I want to grow into someone who creates meaningful change without losing empathy. My ambition is not only to lead, but to make progress feel possible for others.</p>
+          <figure class="story-card__media">
+            <img src="{{ '/assets/images/story/my-ambition.webp' | relative_url }}" alt="A personal visual representing meaningful growth and empathetic leadership" loading="lazy">
+            <figcaption><span>Grow</span><span>Lead</span><span>Enable</span></figcaption>
+          </figure>
         </article>
       </div>
 
@@ -200,7 +205,7 @@ description: Phuong Thao's Digital Project Manager portfolio — connecting busi
         <p class="eyebrow" data-reveal>Selected work</p>
         <h2 id="projects-heading" data-reveal>Featured Projects</h2>
       </div>
-      <p data-reveal>Two projects that show how I move from operational pain points to structured digital solutions.</p>
+      <p data-reveal>Selected projects that show how I move from operational pain points to structured digital solutions.</p>
     </div>
 
     <div class="projects-grid">
@@ -253,41 +258,53 @@ description: Phuong Thao's Digital Project Manager portfolio — connecting busi
   <div class="site-container">
     <div class="section-heading section-heading--split">
       <div>
-        <p class="eyebrow" data-reveal>Outside the project plan</p>
-        <h2 id="activities-heading" data-reveal>Activities that shaped me</h2>
+        <p class="eyebrow" data-reveal>Life Beyond Work &amp; Study</p>
+        <h2 id="activities-heading" data-reveal>Activities &amp; Stories</h2>
       </div>
-      <p data-reveal>Community and creative experiences that strengthened the way I listen, coordinate, and work with people.</p>
+      <p data-reveal>The experiences that have shaped how I connect, contribute, and grow beyond formal projects and classrooms.</p>
     </div>
 
     <div class="activities-grid">
       <article class="activity-card activity-card--blue" data-reveal>
-        <div class="activity-card__number">01</div>
-        <div>
-          <p class="activity-card__type">Community project</p>
-          <h3>Chạm đi thôi</h3>
-          <p>A story about connection, empathy, and creating a positive shared experience.</p>
+        <figure class="activity-card__media">
+          <img src="{{ '/assets/images/activities/cham-di-thoi/cover.webp' | relative_url }}" alt="Chạm Đi Thôi community activity cover" loading="lazy">
+          <span class="activity-sticker activity-sticker--heart" aria-hidden="true">♡</span>
+        </figure>
+        <div class="activity-card__content">
+          <div class="activity-card__number">01</div>
+          <p class="activity-card__type">Social Campaign · 2024—2025</p>
+          <h3>Chạm Đi Thôi</h3>
+          <p>A community-led HIV awareness initiative using knowledge, real stories, and human connection to challenge stigma.</p>
+          <button class="text-link" type="button" data-activity-open="cham-di-thoi">Read the story <span aria-hidden="true">→</span></button>
         </div>
-        <button class="text-link" type="button" data-activity-open="cham-di-thoi">View story <span aria-hidden="true">→</span></button>
       </article>
 
       <article class="activity-card activity-card--teal" data-reveal style="--reveal-delay: 0.12s;">
-        <div class="activity-card__number">02</div>
-        <div>
-          <p class="activity-card__type">Creative exploration</p>
-          <h3>Kính vạn hoa</h3>
-          <p>An experience that taught me to observe people and problems through multiple perspectives.</p>
+        <figure class="activity-card__media">
+          <img src="{{ '/assets/images/activities/kinh-van-hoa/cover.webp' | relative_url }}" alt="Kinh Van Hoa Short Filmmaker Project cover" loading="lazy">
+          <span class="activity-sticker activity-sticker--film" aria-hidden="true">◫</span>
+        </figure>
+        <div class="activity-card__content">
+          <div class="activity-card__number">02</div>
+          <p class="activity-card__type">Creative Exploration · 2024—2026</p>
+          <h3>Kinh Van Hoa Short Filmmaker Project</h3>
+          <p>A creative production journey using storytelling to bring sensitive social conversations closer to the audience.</p>
+          <button class="text-link" type="button" data-activity-open="kinh-van-hoa">Read the story <span aria-hidden="true">→</span></button>
         </div>
-        <button class="text-link" type="button" data-activity-open="kinh-van-hoa">View story <span aria-hidden="true">→</span></button>
       </article>
 
       <article class="activity-card activity-card--gold" data-reveal style="--reveal-delay: 0.24s;">
-        <div class="activity-card__number">03</div>
-        <div>
-          <p class="activity-card__type">Volunteer activity</p>
-          <h3>Trung thu cùng em</h3>
-          <p>A volunteer event shaped by thoughtful preparation, teamwork, and small moments of joy.</p>
+        <figure class="activity-card__media">
+          <img src="{{ '/assets/images/activities/trung-thu-cho-em/cover.webp' | relative_url }}" alt="Trung thu cho em volunteer activity cover" loading="lazy">
+          <span class="activity-sticker activity-sticker--moon" aria-hidden="true">☾</span>
+        </figure>
+        <div class="activity-card__content">
+          <div class="activity-card__number">03</div>
+          <p class="activity-card__type">Volunteer Activity · 2025</p>
+          <h3>Trung thu cho em</h3>
+          <p>An annual Mid-Autumn initiative bringing shared time, small celebrations, and practical support to care-home communities.</p>
+          <button class="text-link" type="button" data-activity-open="trung-thu-cho-em">Read the story <span aria-hidden="true">→</span></button>
         </div>
-        <button class="text-link" type="button" data-activity-open="trung-thu-cung-em">View story <span aria-hidden="true">→</span></button>
       </article>
     </div>
   </div>

@@ -1,5 +1,5 @@
-<div class="drawer-layer" data-drawer-layer hidden>
-  <button class="drawer-overlay" type="button" aria-label="Close activity details" data-drawer-close></button>
+<div class="drawer-layer activity-drawer-layer" data-activity-layer hidden>
+  <button class="drawer-overlay" type="button" aria-label="Close activity details" data-activity-close></button>
 
   <aside
     class="activity-drawer"
@@ -10,78 +10,306 @@
     data-activity-drawer
   >
     <div class="activity-drawer__topbar">
-      <p>Activity story</p>
-      <button class="drawer-close" type="button" aria-label="Close activity details" data-drawer-close>×</button>
+      <p>Activities &amp; Stories</p>
+      <button class="drawer-close" type="button" aria-label="Close activity details" data-activity-close>×</button>
     </div>
-    <div class="activity-drawer__content" data-drawer-content></div>
+    <div class="activity-drawer__content" data-activity-content></div>
   </aside>
 </div>
 
 <template id="activity-cham-di-thoi">
-  <article class="drawer-story">
-    <div class="drawer-story__cover drawer-story__cover--blue" role="img" aria-label="Placeholder cover for Cham di thoi">
-      <span>Community project</span>
+  <article class="drawer-story drawer-story--cham">
+    <figure class="drawer-story__cover">
+      <img src="{{ '/assets/images/activities/cham-di-thoi/cover.webp' | relative_url }}" alt="Chạm Đi Thôi community activity cover">
+      <figcaption><span>Social Campaign</span><strong>Chạm Đi Thôi</strong></figcaption>
+    </figure>
+
+    <div class="drawer-story__intro">
+      <p class="eyebrow">2024—2025 · Ho Chi Minh City</p>
+      <h2 id="activity-drawer-title">Chạm Đi Thôi</h2>
+      <p class="drawer-story__lead">A community-led HIV awareness initiative that uses knowledge, real stories, and human connection to challenge stigma and help people feel seen, supported, and understood.</p>
     </div>
-    <p class="eyebrow">Community · Connection</p>
-    <h2 id="activity-drawer-title">Chạm đi thôi</h2>
-    <p class="drawer-story__lead">A space built around meaningful connection, empathy, and positive community experiences.</p>
-    <div class="drawer-story__section">
-      <h3>My role</h3>
-      <p>Add your exact role, responsibilities, and the people you collaborated with here.</p>
-    </div>
-    <div class="drawer-story__section">
-      <h3>What I contributed</h3>
-      <p>Replace this placeholder with the actions you owned: planning, coordination, communication, content, operations, or on-site execution.</p>
-    </div>
-    <div class="drawer-story__section">
-      <h3>What stayed with me</h3>
-      <p>Use this space for one memorable moment and the lesson it changed in the way you work with people.</p>
-    </div>
+
+    <dl class="story-facts" aria-label="Chạm Đi Thôi quick facts">
+      <div><dt>Role</dt><dd>Communications &amp; Operations Collaborator</dd></div>
+      <div><dt>Participation</dt><dd>Member</dd></div>
+      <div><dt>Focus</dt><dd>HIV awareness and community support</dd></div>
+    </dl>
+
+    <section class="drawer-story__section">
+      <p class="story-kicker">About the activity</p>
+      <h3>Knowledge creates room for understanding.</h3>
+      <p>Chạm Đi Thôi is a community and information platform in Ho Chi Minh City that promotes accurate HIV awareness and calls for an end to stigma and discrimination against people living with HIV.</p>
+      <p>Through accessible health information, community campaigns, and personal stories, the initiative creates space for people to learn, listen, connect, and approach HIV with greater understanding.</p>
+    </section>
+
+    <section class="story-path" aria-label="How the community creates impact">
+      <article>
+        <img src="{{ '/assets/images/activities/cham-di-thoi/learn.webp' | relative_url }}" alt="A visual representing accessible HIV knowledge" loading="lazy">
+        <span aria-hidden="true">01</span><h3>Learn</h3><p>Accessible and responsible HIV information.</p>
+      </article>
+      <article>
+        <img src="{{ '/assets/images/activities/cham-di-thoi/listen.webp' | relative_url }}" alt="A visual representing listening to real community stories" loading="lazy">
+        <span aria-hidden="true">02</span><h3>Listen</h3><p>Real experiences shared with dignity and consent.</p>
+      </article>
+      <article>
+        <img src="{{ '/assets/images/activities/cham-di-thoi/connect.webp' | relative_url }}" alt="A visual representing community connection and support" loading="lazy">
+        <span aria-hidden="true">03</span><h3>Connect</h3><p>Activities built around support and understanding.</p>
+      </article>
+    </section>
+
+    <section class="drawer-story__section drawer-story__section--tint">
+      <p class="story-kicker">My role</p>
+      <h3>Supporting both the message and the work behind it.</h3>
+      <p>As a Communications &amp; Operations Collaborator, I supported both the stories shared publicly and the behind-the-scenes coordination required to keep community activities organised and respectful.</p>
+      <p>Working across communication and operations taught me that meaningful messages depend not only on creative ideas, but also on careful preparation, coordination, and trust.</p>
+    </section>
+
+    <section class="drawer-story__section">
+      <p class="story-kicker">What I contributed</p>
+      <ol class="contribution-list">
+        <li><span>01</span><div><h3>Content preparation</h3><p>Supported the preparation and refinement of content for campaigns, activities, and social media updates.</p></div></li>
+        <li><span>02</span><div><h3>Information coordination</h3><p>Helped organise essential information between the communications and operations teams.</p></div></li>
+        <li><span>03</span><div><h3>Campaign support</h3><p>Assisted with schedules, checklists, materials, participant communication, and on-site preparation.</p></div></li>
+        <li><span>04</span><div><h3>Content documentation</h3><p>Collected images, updates, and activity materials for post-event communication and documentation.</p></div></li>
+        <li><span>05</span><div><h3>Responsive execution</h3><p>Supported the team through last-minute changes while keeping information clear and respectful.</p></div></li>
+      </ol>
+    </section>
+
+    <figure class="story-feature">
+      <img src="{{ '/assets/images/activities/cham-di-thoi/story-35-years.webp' | relative_url }}" alt="Visual for the 35 Years — Stories to Be Heard and Understood initiative" loading="lazy">
+      <figcaption>
+        <p class="story-kicker">Featured community story</p>
+        <h3>35 Years — Stories to Be Heard and Understood</h3>
+        <p>Thirty-five years after HIV was first identified in Vietnam, many stories of fear, resilience, family, love, loss, and hope still remain unheard.</p>
+        <p>The initiative invites people living with HIV, their loved ones, friends, and community allies to share experiences through video, audio, photography, direct conversation, or anonymous narratives.</p>
+      </figcaption>
+    </figure>
+
+    <blockquote class="story-quote">
+      <p>“When people are given the space to speak, others are given the opportunity to listen. Understanding can lead to empathy, and empathy can help reduce the barriers between us.”</p>
+    </blockquote>
+
+    <section class="story-split">
+      <div>
+        <p class="story-kicker">The challenge</p>
+        <h3>Communicating without reducing people to a diagnosis.</h3>
+        <p>Every message needed to remain accessible while protecting dignity, privacy, and the trust of the community being represented.</p>
+      </div>
+      <div>
+        <p class="story-kicker">How I adapted</p>
+        <h3>Slowing down before speaking.</h3>
+        <p>I learned to review communication from more than one perspective and ask whether it was accurate, respectful, necessary, and safe for the people involved.</p>
+      </div>
+    </section>
+
+    <section class="drawer-story__section drawer-story__section--reflection">
+      <p class="story-kicker">What stayed with me</p>
+      <h3>People are not asking to be spoken for.</h3>
+      <p>They are asking for enough safety, respect, and trust to speak for themselves. Sometimes the most responsible contribution is not adding another opinion, but helping create the conditions in which someone else feels able to share their own story.</p>
+      <p>The experience continues to shape how I communicate: listen without rushing to interpret, use language responsibly, and recognise when another person should remain the owner of their story.</p>
+    </section>
+
+    <section class="story-gallery" aria-label="Chạm Đi Thôi image gallery">
+      <img src="{{ '/assets/images/activities/cham-di-thoi/campaign-21-days.webp' | relative_url }}" alt="21 Days of Living Fully campaign material" loading="lazy">
+      <img src="{{ '/assets/images/activities/cham-di-thoi/behind-the-scenes-01.webp' | relative_url }}" alt="Chạm Đi Thôi activity preparation" loading="lazy">
+      <img src="{{ '/assets/images/activities/cham-di-thoi/behind-the-scenes-02.webp' | relative_url }}" alt="Chạm Đi Thôi behind-the-scenes moment" loading="lazy">
+      <img src="{{ '/assets/images/activities/cham-di-thoi/team.webp' | relative_url }}" alt="Chạm Đi Thôi team moment" loading="lazy">
+    </section>
+
+    <a class="drawer-external-link" href="https://www.facebook.com/share/1DYcDB5Ecf/?mibextid=wwXIfr" target="_blank" rel="noopener">Visit Chạm Đi Thôi <span aria-hidden="true">↗</span></a>
   </article>
 </template>
 
 <template id="activity-kinh-van-hoa">
-  <article class="drawer-story">
-    <div class="drawer-story__cover drawer-story__cover--teal" role="img" aria-label="Placeholder cover for Kinh van hoa">
-      <span>Creative exploration</span>
+  <article class="drawer-story drawer-story--kinh">
+    <figure class="drawer-story__cover">
+      <img src="{{ '/assets/images/activities/kinh-van-hoa/cover.webp' | relative_url }}" alt="Kinh Van Hoa Short Filmmaker Project cover">
+      <figcaption><span>Creative Exploration</span><strong>Kinh Van Hoa</strong></figcaption>
+    </figure>
+
+    <div class="drawer-story__intro">
+      <p class="eyebrow">2024—2026 · Ho Chi Minh City · Star Delight</p>
+      <h2 id="activity-drawer-title">Kinh Van Hoa Short Filmmaker Project</h2>
+      <p class="drawer-story__lead">A creative production journey that used storytelling to bring sensitive social conversations closer to the audience.</p>
     </div>
-    <p class="eyebrow">Creative · Multiple perspectives</p>
-    <h2 id="activity-drawer-title">Kính vạn hoa</h2>
-    <p class="drawer-story__lead">A creative experience that encouraged me to observe people and situations through more than one lens.</p>
-    <div class="drawer-story__section">
-      <h3>Context</h3>
-      <p>Add the background, objective, participants, and timeline of the activity here.</p>
-    </div>
-    <div class="drawer-story__section">
-      <h3>My contribution</h3>
-      <p>Describe what you initiated, organized, researched, designed, or communicated.</p>
-    </div>
-    <div class="drawer-story__section">
-      <h3>Lesson learned</h3>
-      <p>Explain how this activity strengthened your creativity, empathy, teamwork, or facilitation skills.</p>
-    </div>
+
+    <dl class="story-facts" aria-label="Kinh Van Hoa quick facts">
+      <div><dt>Role</dt><dd>Production Team Member</dd></div>
+      <div><dt>Creative role</dt><dd>Scriptwriter &amp; Director</dd></div>
+      <div><dt>Season theme</dt><dd>HIV — A Story That Concerns Us All</dd></div>
+    </dl>
+
+    <section class="drawer-story__section">
+      <p class="story-kicker">About the activity</p>
+      <h3>Moving the conversation beyond fear and stereotypes.</h3>
+      <p>The season I joined explored the theme “HIV — A Story That Concerns Us All.” Through short-form storytelling and visual production, the project brought audiences closer to the real experiences, dignity, and everyday lives of people living with HIV.</p>
+      <p>Rather than speaking about HIV only through statistics or warnings, the project used human stories to encourage accurate awareness, challenge stigma, and frame HIV as a conversation about health, dignity, empathy, and collective responsibility.</p>
+    </section>
+
+    <section class="drawer-video-section" aria-labelledby="kinh-video-title">
+      <div class="drawer-video-section__heading">
+        <div><p class="story-kicker">Project intro</p><h3 id="kinh-video-title">Intro video</h3></div>
+        <p>Paste the YouTube link in <code>_config.yml</code> to activate this player.</p>
+      </div>
+      <div
+        class="youtube-embed"
+        data-youtube-embed
+        data-youtube-url="{{ site.activity_media.kinh_van_hoa_intro_youtube }}"
+        data-youtube-title="Kinh Van Hoa project intro"
+      >
+        <img src="{{ '/assets/images/activities/kinh-van-hoa/intro-poster.webp' | relative_url }}" alt="Kinh Van Hoa project intro video poster" loading="lazy">
+        <div><span aria-hidden="true">▶</span><strong>YouTube intro placeholder</strong><small>Add the link in _config.yml</small></div>
+      </div>
+    </section>
+
+    <section class="drawer-story__section drawer-story__section--tint">
+      <p class="story-kicker">My role</p>
+      <h3>Translating a sensitive topic into responsible visual storytelling.</h3>
+      <p>As a Production Team Member, I contributed as a scriptwriter and director for communication products connected to the project.</p>
+      <p>My responsibility was to keep the stories emotionally engaging without sacrificing accuracy, dignity, or context.</p>
+    </section>
+
+    <section class="drawer-story__section">
+      <p class="story-kicker">What I contributed</p>
+      <ol class="contribution-list">
+        <li><span>01</span><div><h3>Research &amp; context building</h3><p>Reviewed the theme, audience, and social context before shaping the creative direction.</p></div></li>
+        <li><span>02</span><div><h3>Script development</h3><p>Developed narrative ideas, scripts, scene structures, and visual storytelling approaches.</p></div></li>
+        <li><span>03</span><div><h3>Directing</h3><p>Guided presentation, pacing, visual tone, and on-set execution.</p></div></li>
+        <li><span>04</span><div><h3>Cross-team coordination</h3><p>Worked with production members, performers, artists, and project stakeholders.</p></div></li>
+        <li><span>05</span><div><h3>Review &amp; refinement</h3><p>Revised communication to protect accuracy, participant dignity, and the public image of the project.</p></div></li>
+      </ol>
+    </section>
+
+    <section class="story-gallery story-gallery--wide" aria-label="Kinh Van Hoa production gallery">
+      <img src="{{ '/assets/images/activities/kinh-van-hoa/research.webp' | relative_url }}" alt="Research and context-building process" loading="lazy">
+      <img src="{{ '/assets/images/activities/kinh-van-hoa/scriptwriting.webp' | relative_url }}" alt="Scriptwriting process" loading="lazy">
+      <img src="{{ '/assets/images/activities/kinh-van-hoa/directing.webp' | relative_url }}" alt="Directing process" loading="lazy">
+    </section>
+
+    <section class="story-split">
+      <div>
+        <p class="story-kicker">The challenge</p>
+        <h3>Many voices, one sensitive message.</h3>
+        <p>The project involved performers, artists, social advocates, production members, and stakeholders with different communication styles and levels of familiarity with HIV.</p>
+      </div>
+      <div>
+        <p class="story-kicker">How I adapted</p>
+        <h3>Creativity with accountability.</h3>
+        <p>I listened to feedback, revised language carefully, clarified intent, and confirmed sensitive details before execution instead of defending an idea only because it looked visually appealing.</p>
+      </div>
+    </section>
+
+    <section class="drawer-story__section drawer-story__section--reflection">
+      <p class="story-kicker">A perspective that changed</p>
+      <h3>Impact can begin with one carefully chosen sentence.</h3>
+      <p>The project showed me that stigma is not always expressed through dramatic acts. Sometimes it appears through silence, distance, careless language, or the feeling that someone must hide an important part of their life to remain accepted.</p>
+      <p>I learned that empathy is not feeling sorry for someone. It is the willingness to listen, learn, and represent their story without taking ownership of it.</p>
+    </section>
+
+    <blockquote class="story-quote">
+      <p>“Is this only visually effective, or is it also responsible, respectful, and true to the people it represents?”</p>
+    </blockquote>
+
+    <section class="story-gallery" aria-label="Kinh Van Hoa behind-the-scenes gallery">
+      <img src="{{ '/assets/images/activities/kinh-van-hoa/production-01.webp' | relative_url }}" alt="Kinh Van Hoa production moment one" loading="lazy">
+      <img src="{{ '/assets/images/activities/kinh-van-hoa/production-02.webp' | relative_url }}" alt="Kinh Van Hoa production moment two" loading="lazy">
+      <img src="{{ '/assets/images/activities/kinh-van-hoa/behind-the-scenes-01.webp' | relative_url }}" alt="Kinh Van Hoa behind-the-scenes moment one" loading="lazy">
+      <img src="{{ '/assets/images/activities/kinh-van-hoa/behind-the-scenes-02.webp' | relative_url }}" alt="Kinh Van Hoa behind-the-scenes moment two" loading="lazy">
+      <img src="{{ '/assets/images/activities/kinh-van-hoa/closing.webp' | relative_url }}" alt="Kinh Van Hoa closing moment" loading="lazy">
+    </section>
+
+    <a class="drawer-external-link" href="https://www.facebook.com/share/18cGNob9BZ/?mibextid=wwXIfr" target="_blank" rel="noopener">Visit the project page <span aria-hidden="true">↗</span></a>
   </article>
 </template>
 
-<template id="activity-trung-thu-cung-em">
-  <article class="drawer-story">
-    <div class="drawer-story__cover drawer-story__cover--gold" role="img" aria-label="Placeholder cover for Trung thu cung em">
-      <span>Volunteer activity</span>
+<template id="activity-trung-thu-cho-em">
+  <article class="drawer-story drawer-story--trungthu">
+    <figure class="drawer-story__cover">
+      <img src="{{ '/assets/images/activities/trung-thu-cho-em/cover.webp' | relative_url }}" alt="Trung thu cho em volunteer activity cover">
+      <figcaption><span>Volunteer Activity</span><strong>Trung thu cho em</strong></figcaption>
+    </figure>
+
+    <div class="drawer-story__intro">
+      <p class="eyebrow">2025 · Vietnam · The W Team</p>
+      <h2 id="activity-drawer-title">Trung thu cho em</h2>
+      <p class="drawer-story__lead">An annual Mid-Autumn initiative bringing small celebrations, shared time, and practical support to children and older adults living in care homes.</p>
     </div>
-    <p class="eyebrow">Volunteer · Social impact</p>
-    <h2 id="activity-drawer-title">Trung thu cùng em</h2>
-    <p class="drawer-story__lead">A volunteer experience centered on preparation, coordination, and creating a warm celebration for children.</p>
-    <div class="drawer-story__section">
-      <h3>My role</h3>
-      <p>Add your role and the scale of the event: team size, audience, location, or resources managed.</p>
-    </div>
-    <div class="drawer-story__section">
-      <h3>How I helped</h3>
-      <p>Describe your planning, fundraising, logistics, communication, or event-day responsibilities.</p>
-    </div>
-    <div class="drawer-story__section">
-      <h3>Personal reflection</h3>
-      <p>Tell the short story that best represents why this experience matters to you.</p>
-    </div>
+
+    <dl class="story-facts" aria-label="Trung thu cho em quick facts">
+      <div><dt>Role</dt><dd>Volunteer</dd></div>
+      <div><dt>Participation</dt><dd>Member</dd></div>
+      <div><dt>Focus</dt><dd>Fundraising, preparation, and on-site support</dd></div>
+    </dl>
+
+    <section class="drawer-story__section">
+      <p class="story-kicker">About the activity</p>
+      <h3>A celebration shaped around the community being visited.</h3>
+      <p>Trung thu cho em is an annual initiative organised during the Mid-Autumn season. Each year, the team raises funds and prepares activities for children and older adults at a selected care home, adapting the program to their needs and circumstances.</p>
+      <p>Through fundraising, thoughtful preparation, shared activities, and personal interaction, the initiative brings attention and companionship to people who may not experience Mid-Autumn within a traditional family setting.</p>
+    </section>
+
+    <figure class="story-feature story-feature--reverse">
+      <img src="{{ '/assets/images/activities/trung-thu-cho-em/gift-packing.webp' | relative_url }}" alt="Volunteers preparing Mid-Autumn gifts" loading="lazy">
+      <figcaption>
+        <p class="story-kicker">My role</p>
+        <h3>Helping wherever the team needed another pair of hands.</h3>
+        <p>As a volunteer, I supported both preparation and on-site activities—from organising materials to helping participants during the event.</p>
+        <p>The role required flexibility rather than one fixed specialist function.</p>
+      </figcaption>
+    </figure>
+
+    <section class="drawer-story__section">
+      <p class="story-kicker">What I contributed</p>
+      <ol class="contribution-list">
+        <li><span>01</span><div><h3>Fundraising support</h3><p>Supported fundraising and preparation activities before the visit.</p></div></li>
+        <li><span>02</span><div><h3>Gift preparation</h3><p>Sorted, packed, and checked gifts, supplies, and program materials.</p></div></li>
+        <li><span>03</span><div><h3>Event setup</h3><p>Assisted with transportation, setup, and on-site coordination.</p></div></li>
+        <li><span>04</span><div><h3>Participant support</h3><p>Joined games, gift-giving, and shared activities with children and older adults.</p></div></li>
+        <li><span>05</span><div><h3>Documentation &amp; closing</h3><p>Helped document the event and restore the activity space after the program.</p></div></li>
+      </ol>
+    </section>
+
+    <section class="story-split">
+      <div>
+        <p class="story-kicker">The challenge</p>
+        <h3>Being helpful without assuming everyone needs the same thing.</h3>
+        <p>Participants differed in age, health, personality, and comfort. A meaningful interaction depended on observing and adapting in the moment.</p>
+      </div>
+      <div>
+        <p class="story-kicker">How I adapted</p>
+        <h3>Paying attention before acting.</h3>
+        <p>I stopped measuring contribution only by completed tasks and focused more on whether someone wanted to join, needed practical help, or simply appreciated quiet company.</p>
+      </div>
+    </section>
+
+    <section class="drawer-story__section drawer-story__section--reflection">
+      <p class="story-kicker">A moment I remember</p>
+      <h3>When a planned program became a shared evening.</h3>
+      <p>What initially felt like a carefully organised volunteer activity gradually became something simpler: people sitting together, sharing food, laughing, and giving one another their full attention.</p>
+      <p>The experience reminded me that support does not always need to arrive as a large solution. A prepared gift, a shared activity, or a few minutes of genuine attention may become the part of the day someone remembers most.</p>
+    </section>
+
+    <section class="story-photo-strip" aria-label="Trung thu cho em preparation story">
+      <figure><img src="{{ '/assets/images/activities/trung-thu-cho-em/fundraising.webp' | relative_url }}" alt="Fundraising preparation" loading="lazy"><figcaption>Fundraise</figcaption></figure>
+      <figure><img src="{{ '/assets/images/activities/trung-thu-cho-em/travel.webp' | relative_url }}" alt="Travelling to the activity location" loading="lazy"><figcaption>Prepare</figcaption></figure>
+      <figure><img src="{{ '/assets/images/activities/trung-thu-cho-em/interaction.webp' | relative_url }}" alt="Volunteer interaction during the activity" loading="lazy"><figcaption>Be present</figcaption></figure>
+    </section>
+
+    <section class="drawer-story__section">
+      <p class="story-kicker">What stayed with me</p>
+      <h3>Community work is not about becoming the centre of someone else’s story.</h3>
+      <p>It is about showing up responsibly and helping create a moment that belongs to them. The activity made me more attentive to small needs and less focused on whether my contribution was visible.</p>
+    </section>
+
+    <section class="story-gallery" aria-label="Trung thu cho em image gallery">
+      <img src="{{ '/assets/images/activities/trung-thu-cho-em/activity-01.webp' | relative_url }}" alt="Mid-Autumn activity moment one" loading="lazy">
+      <img src="{{ '/assets/images/activities/trung-thu-cho-em/activity-02.webp' | relative_url }}" alt="Mid-Autumn activity moment two" loading="lazy">
+      <img src="{{ '/assets/images/activities/trung-thu-cho-em/activity-03.webp' | relative_url }}" alt="Mid-Autumn activity moment three" loading="lazy">
+      <img src="{{ '/assets/images/activities/trung-thu-cho-em/team.webp' | relative_url }}" alt="The W Team volunteer group" loading="lazy">
+      <img src="{{ '/assets/images/activities/trung-thu-cho-em/closing.webp' | relative_url }}" alt="Closing moment of Trung thu cho em" loading="lazy">
+    </section>
+
+    <a class="drawer-external-link" href="https://www.facebook.com/share/18wxtutPDT/?mibextid=wwXIfr" target="_blank" rel="noopener">Visit The W Team activity page <span aria-hidden="true">↗</span></a>
   </article>
 </template>

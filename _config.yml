@@ -1,5 +1,5 @@
-title: "Phuong Thao | Digital Project Manager"
-description: "Digital Project Manager portfolio focused on connecting business strategy, technology execution, data, and design."
+title: "Phuong Thao | Digital Project Management"
+description: "Digital Project Management portfolio focused on connecting business strategy, technology execution, data, design, and people."
 
 # GitHub Pages project-site URL:
 # https://dly77915-glitch.github.io/project_manager_portfolio/
@@ -13,8 +13,18 @@ timezone: "Asia/Ho_Chi_Minh"
 # Shared profile data used by layouts/includes.
 author:
   name: "Phuong Thao"
-  role: "Digital Project Manager"
+  role: "Digital Project Management"
+  phone_display: "0931 084 252"
+  phone_href: "+84931084252"
+  email: "dly77915@gmail.com"
   linkedin: "https://www.linkedin.com/in/thao-dang-53026041a/"
+
+# Paste the full YouTube link here when the Kinh Van Hoa intro is available.
+# Accepted examples:
+# - https://www.youtube.com/watch?v=VIDEO_ID
+# - https://youtu.be/VIDEO_ID
+activity_media:
+  kinh_van_hoa_intro_youtube: ""
 
 # Project case studies stored in _projects/*.md.
 collections:
@@ -36,6 +46,7 @@ exclude:
   - README.md
   - README_IMPLEMENTATION.md
   - DEPLOY_GITHUB_PAGES.md
+  - ASSET_MAP.md
   - .DS_Store
   - .jekyll-cache
   - .sass-cache

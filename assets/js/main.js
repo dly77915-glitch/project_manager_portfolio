@@ -5,6 +5,7 @@
   root.classList.add('js');
 
   const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const focusableSelector = 'a[href], button:not([disabled]), iframe, input, textarea, select, [tabindex]:not([tabindex="-1"])';
 
   // Header state and mobile navigation
   const header = document.querySelector('[data-site-header]');
@@ -18,14 +19,15 @@
   setHeaderState();
   window.addEventListener('scroll', setHeaderState, { passive: true });
 
-  if (navToggle && nav) {
-    const closeNav = () => {
-      navToggle.setAttribute('aria-expanded', 'false');
-      navToggle.setAttribute('aria-label', 'Open navigation');
-      nav.classList.remove('is-open');
-      document.body.classList.remove('nav-open');
-    };
+  const closeNav = () => {
+    if (!navToggle || !nav) return;
+    navToggle.setAttribute('aria-expanded', 'false');
+    navToggle.setAttribute('aria-label', 'Open navigation');
+    nav.classList.remove('is-open');
+    document.body.classList.remove('nav-open');
+  };
 
+  if (navToggle && nav) {
     navToggle.addEventListener('click', () => {
       const willOpen = navToggle.getAttribute('aria-expanded') !== 'true';
       navToggle.setAttribute('aria-expanded', String(willOpen));
@@ -34,7 +36,7 @@
       document.body.classList.toggle('nav-open', willOpen);
     });
 
-    nav.querySelectorAll('a').forEach((link) => link.addEventListener('click', closeNav));
+    nav.querySelectorAll('a, button[data-cv-open]').forEach((control) => control.addEventListener('click', closeNav));
     window.addEventListener('resize', () => {
       if (window.innerWidth > 860) closeNav();
     });
@@ -137,56 +139,14 @@
     updateCurrent();
   }
 
-  // Activity drawer
-  const drawerLayer = document.querySelector('[data-drawer-layer]');
-  const drawer = document.querySelector('[data-activity-drawer]');
-  const drawerContent = document.querySelector('[data-drawer-content]');
-  const openButtons = [...document.querySelectorAll('[data-activity-open]')];
-  const closeButtons = [...document.querySelectorAll('[data-drawer-close]')];
-  let lastFocusedElement = null;
-
-  const focusableSelector = 'a[href], button:not([disabled]), input, textarea, select, [tabindex]:not([tabindex="-1"])';
-
-  const closeDrawer = () => {
-    if (!drawerLayer || drawerLayer.hidden) return;
-    drawerLayer.classList.remove('is-open');
-    document.body.classList.remove('drawer-open');
-    window.setTimeout(() => {
-      drawerLayer.hidden = true;
-      if (drawerContent) drawerContent.innerHTML = '';
-      lastFocusedElement?.focus();
-    }, reducedMotion ? 0 : 320);
+  const refreshDrawerLock = () => {
+    const hasOpenDrawer = Boolean(document.querySelector('.drawer-layer.is-open'));
+    document.body.classList.toggle('drawer-open', hasOpenDrawer);
   };
 
-  const openDrawer = (activityId, trigger) => {
-    if (!drawerLayer || !drawer || !drawerContent) return;
-    const template = document.querySelector(`#activity-${activityId}`);
-    if (!(template instanceof HTMLTemplateElement)) return;
-
-    lastFocusedElement = trigger;
-    drawerContent.replaceChildren(template.content.cloneNode(true));
-    drawerLayer.hidden = false;
-    document.body.classList.add('drawer-open');
-    window.requestAnimationFrame(() => {
-      drawerLayer.classList.add('is-open');
-      drawer.focus();
-    });
-  };
-
-  openButtons.forEach((button) => {
-    button.addEventListener('click', () => openDrawer(button.dataset.activityOpen, button));
-  });
-  closeButtons.forEach((button) => button.addEventListener('click', closeDrawer));
-
-  document.addEventListener('keydown', (event) => {
-    if (!drawerLayer || drawerLayer.hidden) return;
-    if (event.key === 'Escape') {
-      closeDrawer();
-      return;
-    }
+  const trapDrawerFocus = (event, drawer) => {
     if (event.key !== 'Tab' || !drawer) return;
-
-    const focusable = [...drawer.querySelectorAll(focusableSelector)];
+    const focusable = [...drawer.querySelectorAll(focusableSelector)].filter((element) => !element.hasAttribute('hidden'));
     if (!focusable.length) return;
     const first = focusable[0];
     const last = focusable[focusable.length - 1];
@@ -196,6 +156,122 @@
     } else if (!event.shiftKey && document.activeElement === last) {
       event.preventDefault();
       first.focus();
+    }
+  };
+
+  // CV drawer — shared by Header, Hero, and Footer buttons
+  const cvLayer = document.querySelector('[data-cv-layer]');
+  const cvDrawer = document.querySelector('[data-cv-drawer]');
+  const cvOpenButtons = [...document.querySelectorAll('[data-cv-open]')];
+  const cvCloseButtons = [...document.querySelectorAll('[data-cv-close]')];
+  let cvLastFocused = null;
+
+  const closeCvDrawer = () => {
+    if (!cvLayer || cvLayer.hidden) return;
+    cvLayer.classList.remove('is-open');
+    window.setTimeout(() => {
+      cvLayer.hidden = true;
+      refreshDrawerLock();
+      cvLastFocused?.focus();
+    }, reducedMotion ? 0 : 380);
+  };
+
+  const openCvDrawer = (trigger) => {
+    if (!cvLayer || !cvDrawer) return;
+    cvLastFocused = trigger;
+    cvLayer.hidden = false;
+    window.requestAnimationFrame(() => {
+      cvLayer.classList.add('is-open');
+      refreshDrawerLock();
+      cvDrawer.focus();
+    });
+  };
+
+  cvOpenButtons.forEach((button) => button.addEventListener('click', () => openCvDrawer(button)));
+  cvCloseButtons.forEach((button) => button.addEventListener('click', closeCvDrawer));
+
+  // YouTube link parser for the Kinh Van Hoa intro placeholder
+  const getYouTubeId = (input) => {
+    if (!input) return '';
+    try {
+      const url = new URL(input);
+      if (url.hostname.includes('youtu.be')) return url.pathname.split('/').filter(Boolean)[0] || '';
+      if (url.pathname.includes('/embed/')) return url.pathname.split('/embed/')[1]?.split('/')[0] || '';
+      if (url.pathname.includes('/shorts/')) return url.pathname.split('/shorts/')[1]?.split('/')[0] || '';
+      return url.searchParams.get('v') || '';
+    } catch {
+      return input.match(/^[\w-]{11}$/) ? input : '';
+    }
+  };
+
+  const initialiseYouTubeEmbeds = (container) => {
+    container.querySelectorAll('[data-youtube-embed]').forEach((embed) => {
+      const videoId = getYouTubeId(embed.dataset.youtubeUrl?.trim());
+      if (!videoId) return;
+      const iframe = document.createElement('iframe');
+      iframe.src = `https://www.youtube-nocookie.com/embed/${encodeURIComponent(videoId)}`;
+      iframe.title = embed.dataset.youtubeTitle || 'YouTube video';
+      iframe.loading = 'lazy';
+      iframe.allow = 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share';
+      iframe.allowFullscreen = true;
+      embed.replaceChildren(iframe);
+    });
+  };
+
+  // Activity drawer
+  const activityLayer = document.querySelector('[data-activity-layer]');
+  const activityDrawer = document.querySelector('[data-activity-drawer]');
+  const activityContent = document.querySelector('[data-activity-content]');
+  const activityOpenButtons = [...document.querySelectorAll('[data-activity-open]')];
+  const activityCloseButtons = [...document.querySelectorAll('[data-activity-close]')];
+  let activityLastFocused = null;
+
+  const closeActivityDrawer = () => {
+    if (!activityLayer || activityLayer.hidden) return;
+    activityLayer.classList.remove('is-open');
+    window.setTimeout(() => {
+      activityLayer.hidden = true;
+      if (activityContent) activityContent.innerHTML = '';
+      refreshDrawerLock();
+      activityLastFocused?.focus();
+    }, reducedMotion ? 0 : 380);
+  };
+
+  const openActivityDrawer = (activityId, trigger) => {
+    if (!activityLayer || !activityDrawer || !activityContent) return;
+    const template = document.querySelector(`#activity-${activityId}`);
+    if (!(template instanceof HTMLTemplateElement)) return;
+
+    activityLastFocused = trigger;
+    activityContent.replaceChildren(template.content.cloneNode(true));
+    initialiseYouTubeEmbeds(activityContent);
+    activityLayer.hidden = false;
+    window.requestAnimationFrame(() => {
+      activityLayer.classList.add('is-open');
+      refreshDrawerLock();
+      activityDrawer.focus();
+    });
+  };
+
+  activityOpenButtons.forEach((button) => {
+    button.addEventListener('click', () => openActivityDrawer(button.dataset.activityOpen, button));
+  });
+  activityCloseButtons.forEach((button) => button.addEventListener('click', closeActivityDrawer));
+
+  document.addEventListener('keydown', (event) => {
+    if (event.key === 'Escape') {
+      if (activityLayer && !activityLayer.hidden) {
+        closeActivityDrawer();
+        return;
+      }
+      if (cvLayer && !cvLayer.hidden) closeCvDrawer();
+      return;
+    }
+
+    if (activityLayer && !activityLayer.hidden) {
+      trapDrawerFocus(event, activityDrawer);
+    } else if (cvLayer && !cvLayer.hidden) {
+      trapDrawerFocus(event, cvDrawer);
     }
   });
 
