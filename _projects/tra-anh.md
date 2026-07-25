@@ -1,21 +1,11 @@
 ---
-slug: tra-anh
-title: "Digital Ordering Solution — Tra Anh"
+title: "Trà Anh Digital Ordering"
 role: "Business Analyst"
-summary: "Redesigned end-to-end ordering workflows to remove peak-hour bottlenecks — TODO: refine when detailed content is written."
-tags:
-  - Workflow Redesign
-  - Data Architecture
-  - Mobile App Prototype
-cover_image: /assets/images/tra-anh/cover.jpg
-documents: []
-  # - label: "PRD"
-  #   url: /assets/docs/tra-anh/prd.pdf
+summary: "End-to-end ordering workflow redesign, data modeling, and mobile experience prototyping."
 ---
 
-<!--
-  Placeholder on purpose — same note as ht-beauty.md. Detailed case-study
-  content will be written in a dedicated follow-up task.
--->
+> This is a safe placeholder page so the Home project link works immediately. Replace this body with your existing Trà Anh case-study content when you are ready to develop the project-detail page.
 
-_Detailed case study coming soon._
+## Project overview
+
+Add the business context, peak-hour bottlenecks, requirements, workflows, system logic, prototype, and outcomes here.

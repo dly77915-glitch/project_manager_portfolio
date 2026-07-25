@@ -1,14 +1,22 @@
 title: "Phuong Thao | Digital Project Manager"
 description: "Digital Project Manager portfolio focused on connecting business strategy, technology execution, data, and design."
+
+# GitHub Pages project-site URL:
+# https://dly77915-glitch.github.io/project_manager_portfolio/
 url: "https://dly77915-glitch.github.io"
 baseurl: "/project_manager_portfolio"
-lang: en
+repository: "dly77915-glitch/project_manager_portfolio"
 
+lang: "en"
+timezone: "Asia/Ho_Chi_Minh"
+
+# Shared profile data used by layouts/includes.
 author:
   name: "Phuong Thao"
   role: "Digital Project Manager"
   linkedin: "https://www.linkedin.com/in/thao-dang-53026041a/"
 
+# Project case studies stored in _projects/*.md.
 collections:
   projects:
     output: true
@@ -27,4 +35,7 @@ permalink: pretty
 exclude:
   - README.md
   - README_IMPLEMENTATION.md
+  - DEPLOY_GITHUB_PAGES.md
   - .DS_Store
+  - .jekyll-cache
+  - .sass-cache
