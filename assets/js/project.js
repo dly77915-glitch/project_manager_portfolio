@@ -126,29 +126,51 @@
     }
   });
 
-  // Sticky project navigator: smooth anchors, active section, and mobile centering.
+  // Sticky project navigator: compact anchors, reliable cross-section navigation,
+  // active-section tracking, and horizontal-only chip centering.
   const projectNavigator = document.querySelector('[data-project-navigator]');
   const projectNavLinks = projectNavigator
     ? [...projectNavigator.querySelectorAll('[data-project-nav-link]')]
     : [];
 
   if (projectNavigator && projectNavLinks.length) {
+    const projectNavScroller = projectNavigator.querySelector('[data-project-nav-scroll]');
     const projectNavTargets = projectNavLinks
-      .map((link) => ({ link, target: document.getElementById(link.dataset.projectNavTarget || '') }))
+      .map((link) => ({
+        link,
+        target: document.getElementById(link.dataset.projectNavTarget || '')
+      }))
       .filter((item) => item.target);
+
     let activeProjectNavId = '';
     let projectNavTicking = false;
+    let isProjectNavNavigating = false;
+    let projectNavUnlockTimer = 0;
+    let intendedProjectNavTop = null;
 
     const navigatorOffset = () => {
       const headerHeight = Number.parseFloat(
         getComputedStyle(document.documentElement).getPropertyValue('--header-height')
       ) || 0;
-      return headerHeight + projectNavigator.offsetHeight + 18;
+      return headerHeight + projectNavigator.offsetHeight + 12;
+    };
+
+    const centerProjectNavLink = (link) => {
+      if (!link || !projectNavScroller || projectNavScroller.scrollWidth <= projectNavScroller.clientWidth) return;
+
+      const desiredLeft = link.offsetLeft - ((projectNavScroller.clientWidth - link.offsetWidth) / 2);
+      const maxLeft = Math.max(0, projectNavScroller.scrollWidth - projectNavScroller.clientWidth);
+      projectNavScroller.scrollTo({
+        left: Math.max(0, Math.min(desiredLeft, maxLeft)),
+        behavior: reducedMotion ? 'auto' : 'smooth'
+      });
     };
 
     const setActiveProjectNav = (id, center = false) => {
-      if (!id || id === activeProjectNavId) return;
+      if (!id) return;
+      const changed = id !== activeProjectNavId;
       activeProjectNavId = id;
+
       projectNavLinks.forEach((link) => {
         const isActive = link.dataset.projectNavTarget === id;
         link.classList.toggle('is-active', isActive);
@@ -156,18 +178,31 @@
         else link.removeAttribute('aria-current');
       });
 
-      if (center) {
-        const activeLink = projectNavLinks.find((link) => link.dataset.projectNavTarget === id);
-        const scroller = projectNavigator.querySelector('[data-project-nav-scroll]');
-        if (activeLink && scroller && scroller.scrollWidth > scroller.clientWidth) {
-          activeLink.scrollIntoView({ behavior: reducedMotion ? 'auto' : 'smooth', block: 'nearest', inline: 'center' });
-        }
+      if (center && changed) {
+        centerProjectNavLink(
+          projectNavLinks.find((link) => link.dataset.projectNavTarget === id)
+        );
       }
+    };
+
+    const unlockProjectNav = () => {
+      isProjectNavNavigating = false;
+      intendedProjectNavTop = null;
+      window.clearTimeout(projectNavUnlockTimer);
+      projectNavUnlockTimer = 0;
+      requestProjectNavUpdate();
+    };
+
+    const scheduleProjectNavUnlock = (delay = 180) => {
+      window.clearTimeout(projectNavUnlockTimer);
+      projectNavUnlockTimer = window.setTimeout(unlockProjectNav, delay);
     };
 
     const updateActiveProjectNav = () => {
       projectNavTicking = false;
-      const marker = window.scrollY + navigatorOffset() + 32;
+      if (isProjectNavNavigating) return;
+
+      const marker = window.scrollY + navigatorOffset() + 28;
       let current = projectNavTargets[0]?.target.id || '';
       projectNavTargets.forEach(({ target }) => {
         if (target.offsetTop <= marker) current = target.id;
@@ -175,32 +210,71 @@
       setActiveProjectNav(current, true);
     };
 
-    const requestProjectNavUpdate = () => {
+    function requestProjectNavUpdate() {
       if (projectNavTicking) return;
       projectNavTicking = true;
       window.requestAnimationFrame(updateActiveProjectNav);
-    };
+    }
 
     projectNavLinks.forEach((link) => {
       link.addEventListener('click', (event) => {
         const target = document.getElementById(link.dataset.projectNavTarget || '');
         if (!target) return;
+
         event.preventDefault();
-        const top = target.getBoundingClientRect().top + window.scrollY - navigatorOffset();
-        window.scrollTo({ top: Math.max(0, top), behavior: reducedMotion ? 'auto' : 'smooth' });
-        window.history.replaceState(null, '', `#${target.id}`);
+        window.clearTimeout(projectNavUnlockTimer);
+        isProjectNavNavigating = true;
+
+        const top = Math.max(
+          0,
+          target.getBoundingClientRect().top + window.scrollY - navigatorOffset()
+        );
+        intendedProjectNavTop = top;
+
         setActiveProjectNav(target.id, true);
+        window.history.replaceState(null, '', `#${target.id}`);
+        window.scrollTo({
+          top,
+          behavior: reducedMotion ? 'auto' : 'smooth'
+        });
+
+        if (reducedMotion) {
+          window.requestAnimationFrame(unlockProjectNav);
+        } else {
+          scheduleProjectNavUnlock(1200);
+        }
       });
     });
 
-    window.addEventListener('scroll', requestProjectNavUpdate, { passive: true });
-    window.addEventListener('resize', requestProjectNavUpdate);
+    window.addEventListener('scroll', () => {
+      if (isProjectNavNavigating) {
+        if (intendedProjectNavTop !== null && Math.abs(window.scrollY - intendedProjectNavTop) <= 5) {
+          scheduleProjectNavUnlock(90);
+        } else {
+          scheduleProjectNavUnlock(220);
+        }
+        return;
+      }
+      requestProjectNavUpdate();
+    }, { passive: true });
+
+    window.addEventListener('resize', () => {
+      if (isProjectNavNavigating) unlockProjectNav();
+      requestProjectNavUpdate();
+    });
+
     window.addEventListener('load', () => {
-      const hashTarget = window.location.hash ? document.querySelector(window.location.hash) : null;
+      const hashTarget = window.location.hash
+        ? document.querySelector(window.location.hash)
+        : null;
+
       if (hashTarget && projectNavTargets.some(({ target }) => target === hashTarget)) {
         window.setTimeout(() => {
-          const top = hashTarget.getBoundingClientRect().top + window.scrollY - navigatorOffset();
-          window.scrollTo({ top: Math.max(0, top), behavior: 'auto' });
+          const top = Math.max(
+            0,
+            hashTarget.getBoundingClientRect().top + window.scrollY - navigatorOffset()
+          );
+          window.scrollTo({ top, behavior: 'auto' });
           setActiveProjectNav(hashTarget.id, true);
         }, 60);
       } else {
