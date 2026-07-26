@@ -329,7 +329,6 @@ impact:
   - label: "Expected impact"
     value: "↓ No-shows"
     text: "Structured reminders and follow-up tasks were designed to support better appointment attendance."
-impact_note: "The project did not use the previous claim of '100% double-booking conflicts resolved.' The portfolio distinguishes solution intent from measured production outcomes."
 
 reflection_heading: "What the project changed in the way I approach implementation."
 reflection_intro: "The reflection focuses on decisions, limitations, and what I would strengthen in another iteration."

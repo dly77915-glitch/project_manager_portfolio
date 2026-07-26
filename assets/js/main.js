@@ -207,7 +207,10 @@
   const initialiseYouTubeEmbeds = (container) => {
     container.querySelectorAll('[data-youtube-embed]').forEach((embed) => {
       const videoId = getYouTubeId(embed.dataset.youtubeUrl?.trim());
-      if (!videoId) return;
+      if (!videoId) {
+        embed.closest('[data-youtube-section]')?.remove();
+        return;
+      }
       const iframe = document.createElement('iframe');
       iframe.src = `https://www.youtube-nocookie.com/embed/${encodeURIComponent(videoId)}`;
       iframe.title = embed.dataset.youtubeTitle || 'YouTube video';

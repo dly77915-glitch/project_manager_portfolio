@@ -16,7 +16,7 @@
       </div>
 
       <div class="cv-drawer__actions">
-        <a class="button button--gold button--compact" href="{{ '/cv.pdf' | relative_url }}" download>
+        <a class="button button--gold button--compact" href="{{ '/assets/cv.pdf' | relative_url }}" download>
           Download CV <span aria-hidden="true">↓</span>
         </a>
         <button class="drawer-close" type="button" aria-label="Close CV" data-cv-close>×</button>
@@ -27,12 +27,12 @@
       <div class="cv-viewer" aria-label="Embedded curriculum vitae">
         <iframe
           title="Phuong Thao curriculum vitae"
-          src="{{ '/cv.pdf' | relative_url }}#view=FitH&amp;toolbar=0&amp;navpanes=0"
+          src="{{ '/assets/cv.pdf' | relative_url }}#view=FitH&amp;toolbar=0&amp;navpanes=0"
           loading="lazy"
         ></iframe>
         <p class="cv-viewer__fallback">
           Your browser cannot display the PDF preview.
-          <a href="{{ '/cv.pdf' | relative_url }}" download>Download the CV instead.</a>
+          <a href="{{ '/assets/cv.pdf' | relative_url }}" download>Download the CV instead.</a>
         </p>
       </div>
 

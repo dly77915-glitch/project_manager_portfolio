@@ -252,7 +252,6 @@ impact:
   - label: "Designed capability"
     value: "1st-party flow"
     text: "A connected ordering, status, customer-data, and loyalty foundation was proposed."
-impact_note: "Customer profiles and loyalty were designed capabilities only. The portfolio does not present them as implemented features or measured commercial outcomes."
 
 reflection_heading: "What the project taught me about designing beyond the screen."
 reflection_intro: "The strongest learning came from connecting interface choices with operational handoffs and data rules."
