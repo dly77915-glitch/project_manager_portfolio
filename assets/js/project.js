@@ -125,4 +125,90 @@
       first.focus();
     }
   });
+
+  // Sticky project navigator: smooth anchors, active section, and mobile centering.
+  const projectNavigator = document.querySelector('[data-project-navigator]');
+  const projectNavLinks = projectNavigator
+    ? [...projectNavigator.querySelectorAll('[data-project-nav-link]')]
+    : [];
+
+  if (projectNavigator && projectNavLinks.length) {
+    const projectNavTargets = projectNavLinks
+      .map((link) => ({ link, target: document.getElementById(link.dataset.projectNavTarget || '') }))
+      .filter((item) => item.target);
+    let activeProjectNavId = '';
+    let projectNavTicking = false;
+
+    const navigatorOffset = () => {
+      const headerHeight = Number.parseFloat(
+        getComputedStyle(document.documentElement).getPropertyValue('--header-height')
+      ) || 0;
+      return headerHeight + projectNavigator.offsetHeight + 18;
+    };
+
+    const setActiveProjectNav = (id, center = false) => {
+      if (!id || id === activeProjectNavId) return;
+      activeProjectNavId = id;
+      projectNavLinks.forEach((link) => {
+        const isActive = link.dataset.projectNavTarget === id;
+        link.classList.toggle('is-active', isActive);
+        if (isActive) link.setAttribute('aria-current', 'location');
+        else link.removeAttribute('aria-current');
+      });
+
+      if (center) {
+        const activeLink = projectNavLinks.find((link) => link.dataset.projectNavTarget === id);
+        const scroller = projectNavigator.querySelector('[data-project-nav-scroll]');
+        if (activeLink && scroller && scroller.scrollWidth > scroller.clientWidth) {
+          activeLink.scrollIntoView({ behavior: reducedMotion ? 'auto' : 'smooth', block: 'nearest', inline: 'center' });
+        }
+      }
+    };
+
+    const updateActiveProjectNav = () => {
+      projectNavTicking = false;
+      const marker = window.scrollY + navigatorOffset() + 32;
+      let current = projectNavTargets[0]?.target.id || '';
+      projectNavTargets.forEach(({ target }) => {
+        if (target.offsetTop <= marker) current = target.id;
+      });
+      setActiveProjectNav(current, true);
+    };
+
+    const requestProjectNavUpdate = () => {
+      if (projectNavTicking) return;
+      projectNavTicking = true;
+      window.requestAnimationFrame(updateActiveProjectNav);
+    };
+
+    projectNavLinks.forEach((link) => {
+      link.addEventListener('click', (event) => {
+        const target = document.getElementById(link.dataset.projectNavTarget || '');
+        if (!target) return;
+        event.preventDefault();
+        const top = target.getBoundingClientRect().top + window.scrollY - navigatorOffset();
+        window.scrollTo({ top: Math.max(0, top), behavior: reducedMotion ? 'auto' : 'smooth' });
+        window.history.replaceState(null, '', `#${target.id}`);
+        setActiveProjectNav(target.id, true);
+      });
+    });
+
+    window.addEventListener('scroll', requestProjectNavUpdate, { passive: true });
+    window.addEventListener('resize', requestProjectNavUpdate);
+    window.addEventListener('load', () => {
+      const hashTarget = window.location.hash ? document.querySelector(window.location.hash) : null;
+      if (hashTarget && projectNavTargets.some(({ target }) => target === hashTarget)) {
+        window.setTimeout(() => {
+          const top = hashTarget.getBoundingClientRect().top + window.scrollY - navigatorOffset();
+          window.scrollTo({ top: Math.max(0, top), behavior: 'auto' });
+          setActiveProjectNav(hashTarget.id, true);
+        }, 60);
+      } else {
+        requestProjectNavUpdate();
+      }
+    }, { once: true });
+
+    requestProjectNavUpdate();
+  }
+
 })();

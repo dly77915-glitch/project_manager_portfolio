@@ -1,0 +1,52 @@
+{% assign visible_evidence = page.evidence | where: "visible", true %}
+<section class="project-navigator" data-project-navigator aria-label="Project case study navigation">
+  <div class="project-container project-navigator__inner">
+    <div class="project-navigator__heading">
+      <p>Project navigator</p>
+      <strong>Explore the case study</strong>
+    </div>
+
+    <nav class="project-navigator__scroll" aria-label="Case study sections" data-project-nav-scroll>
+      <a href="#project-overview" data-project-nav-link data-project-nav-target="project-overview">
+        <span>01</span>
+        <strong>Overview</strong>
+      </a>
+
+      <a href="#project-context" data-project-nav-link data-project-nav-target="project-context">
+        <span>02</span>
+        <strong>{% if page.project_key == 'ht-beauty' %}Operational Context{% else %}Service Context{% endif %}</strong>
+      </a>
+
+      <a href="#project-role" data-project-nav-link data-project-nav-target="project-role">
+        <span>03</span>
+        <strong>{% if page.project_key == 'ht-beauty' %}My Ownership{% else %}My Contribution{% endif %}</strong>
+      </a>
+
+      <a href="#project-journey" data-project-nav-link data-project-nav-target="project-journey">
+        <span>04</span>
+        <strong>{% if page.project_key == 'ht-beauty' %}Delivery Approach{% else %}Analysis Approach{% endif %}</strong>
+      </a>
+
+      <a href="#project-solutions" data-project-nav-link data-project-nav-target="project-solutions">
+        <span>05</span>
+        <strong>{% if page.project_key == 'ht-beauty' %}Odoo Solutions{% else %}Product Decisions{% endif %}</strong>
+      </a>
+
+      {% if page.evidence_enabled and visible_evidence.size > 0 %}
+        <a href="#project-evidence" data-project-nav-link data-project-nav-target="project-evidence">
+          <span>06</span>
+          <strong>Project Evidence</strong>
+        </a>
+        <a href="#project-impact" data-project-nav-link data-project-nav-target="project-impact">
+          <span>07</span>
+          <strong>Impact &amp; Reflection</strong>
+        </a>
+      {% else %}
+        <a href="#project-impact" data-project-nav-link data-project-nav-target="project-impact">
+          <span>06</span>
+          <strong>Impact &amp; Reflection</strong>
+        </a>
+      {% endif %}
+    </nav>
+  </div>
+</section>

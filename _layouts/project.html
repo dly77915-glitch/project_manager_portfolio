@@ -3,6 +3,7 @@ layout: default
 ---
 <article class="case-study case-study--{{ page.project_key | default: page.slug }}">
   {% include project/project-hero.html %}
+  {% include project/project-navigator.html %}
   {% include project/project-snapshot.html %}
 
   {% if page.demo.visible and page.demo.position == 'early' %}
