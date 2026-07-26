@@ -190,7 +190,7 @@
   cvOpenButtons.forEach((button) => button.addEventListener('click', () => openCvDrawer(button)));
   cvCloseButtons.forEach((button) => button.addEventListener('click', closeCvDrawer));
 
-  // YouTube link parser for the Kinh Van Hoa intro placeholder
+  // YouTube link parser for activity videos
   const getYouTubeId = (input) => {
     if (!input) return '';
     try {
@@ -221,6 +221,68 @@
     });
   };
 
+  const initialiseProcessCarousels = (container) => {
+    container.querySelectorAll('[data-process-carousel]').forEach((carouselElement) => {
+      const track = carouselElement.querySelector('[data-process-track]');
+      const slides = [...carouselElement.querySelectorAll('[data-process-slide]')];
+      const previous = carouselElement.querySelector('[data-process-prev]');
+      const next = carouselElement.querySelector('[data-process-next]');
+      const current = carouselElement.querySelector('[data-process-current]');
+      if (!track || !slides.length) return;
+
+      let activeIndex = 0;
+      let scrollFrame = 0;
+
+      const setActiveIndex = (index, shouldScroll = false) => {
+        activeIndex = Math.max(0, Math.min(slides.length - 1, index));
+        if (current) current.textContent = String(activeIndex + 1).padStart(2, '0');
+        if (previous) previous.disabled = activeIndex === 0;
+        if (next) next.disabled = activeIndex === slides.length - 1;
+        slides.forEach((slide, slideIndex) => slide.classList.toggle('is-active', slideIndex === activeIndex));
+        if (shouldScroll) {
+          track.scrollTo({
+            left: slides[activeIndex].offsetLeft,
+            behavior: reducedMotion ? 'auto' : 'smooth'
+          });
+        }
+      };
+
+      const updateFromScroll = () => {
+        window.cancelAnimationFrame(scrollFrame);
+        scrollFrame = window.requestAnimationFrame(() => {
+          const trackCenter = track.scrollLeft + track.clientWidth / 2;
+          let closestIndex = 0;
+          let closestDistance = Number.POSITIVE_INFINITY;
+          slides.forEach((slide, index) => {
+            const slideCenter = slide.offsetLeft + slide.offsetWidth / 2;
+            const distance = Math.abs(trackCenter - slideCenter);
+            if (distance < closestDistance) {
+              closestDistance = distance;
+              closestIndex = index;
+            }
+          });
+          setActiveIndex(closestIndex);
+        });
+      };
+
+      previous?.addEventListener('click', () => setActiveIndex(activeIndex - 1, true));
+      next?.addEventListener('click', () => setActiveIndex(activeIndex + 1, true));
+      track.addEventListener('scroll', updateFromScroll, { passive: true });
+      track.addEventListener('keydown', (event) => {
+        if (event.key === 'ArrowLeft') {
+          event.preventDefault();
+          setActiveIndex(activeIndex - 1, true);
+        }
+        if (event.key === 'ArrowRight') {
+          event.preventDefault();
+          setActiveIndex(activeIndex + 1, true);
+        }
+      });
+
+      setActiveIndex(0);
+    });
+  };
+
   // Activity drawer
   const activityLayer = document.querySelector('[data-activity-layer]');
   const activityDrawer = document.querySelector('[data-activity-drawer]');
@@ -248,6 +310,7 @@
     activityLastFocused = trigger;
     activityContent.replaceChildren(template.content.cloneNode(true));
     initialiseYouTubeEmbeds(activityContent);
+    initialiseProcessCarousels(activityContent);
     activityLayer.hidden = false;
     window.requestAnimationFrame(() => {
       activityLayer.classList.add('is-open');

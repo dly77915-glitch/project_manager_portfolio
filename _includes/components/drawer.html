@@ -154,31 +154,89 @@
       </div>
     </section>
 
-    <section class="creative-stages" aria-label="My creative contribution">
-      <article>
-        <img src="{{ '/assets/images/activities/kinh-van-hoa/research.webp' | relative_url }}" alt="Research stage" loading="lazy">
-        <div><span>01</span><h3>Research</h3><p>Understand the context before shaping the story.</p></div>
-      </article>
-      <article>
-        <img src="{{ '/assets/images/activities/kinh-van-hoa/scriptwriting.webp' | relative_url }}" alt="Scriptwriting stage" loading="lazy">
-        <div><span>02</span><h3>Write</h3><p>Turn sensitive context into a clear narrative.</p></div>
-      </article>
-      <article>
-        <img src="{{ '/assets/images/activities/kinh-van-hoa/directing.webp' | relative_url }}" alt="Directing stage" loading="lazy">
-        <div><span>03</span><h3>Direct</h3><p>Bring the message to the screen with intention.</p></div>
-      </article>
-    </section>
+    <section class="process-carousel" data-process-carousel aria-labelledby="process-carousel-title">
+      <header class="process-carousel__heading">
+        <div>
+          <p class="story-kicker">Behind the story</p>
+          <h3 id="process-carousel-title">How the story took shape</h3>
+          <p>Before a story could be written or filmed, it first had to be understood with care.</p>
+        </div>
+        <div class="process-carousel__controls" aria-label="Production process carousel controls">
+          <button type="button" class="process-carousel__button" data-process-prev aria-label="Previous stage">←</button>
+          <p class="process-carousel__count"><span data-process-current>01</span><span aria-hidden="true"> / </span><span>03</span></p>
+          <button type="button" class="process-carousel__button" data-process-next aria-label="Next stage">→</button>
+        </div>
+      </header>
 
-    <section class="story-block story-block--media-right story-block--soft">
-      <figure class="story-block__media">
-        <img src="{{ '/assets/images/activities/kinh-van-hoa/production-01.webp' | relative_url }}" alt="Kinh Van Hoa production process" loading="lazy">
-        <figcaption>From research to the final frame.</figcaption>
-      </figure>
-      <div class="story-block__content">
-        <p class="story-kicker">My creative role</p>
-        <h3>Shaping a message across people, words, and images.</h3>
-        <p>As a Production Team Member, Scriptwriter, and Director, I helped refine the narrative, guide the visual tone, and connect the ideas of performers, artists, advocates, and the production team.</p>
+      <div class="process-carousel__track" data-process-track tabindex="0">
+        <article class="process-slide" data-process-slide>
+          <div class="process-slide__copy">
+            <p class="process-slide__number">01</p>
+            <p class="process-slide__eyebrow">Listen</p>
+            <h4>Understand the voices the story needed to respect.</h4>
+            <p>The process began with listening—not only to information, but to the perspectives and lived experiences behind it.</p>
+            <p class="process-slide__caption">Listening before interpreting.</p>
+          </div>
+          <div class="process-slide__mosaic process-slide__mosaic--listen">
+            <figure class="process-slide__image process-slide__image--main">
+              <img src="{{ '/assets/images/activities/kinh-van-hoa/process/listen-main.webp' | relative_url }}" alt="Kinh Van Hoa team listening and discussing the project context" loading="lazy">
+            </figure>
+            <figure class="process-slide__image">
+              <img src="{{ '/assets/images/activities/kinh-van-hoa/process/listen-detail-01.webp' | relative_url }}" alt="Research notes for the Kinh Van Hoa project" loading="lazy">
+            </figure>
+            <figure class="process-slide__image">
+              <img src="{{ '/assets/images/activities/kinh-van-hoa/process/listen-detail-02.webp' | relative_url }}" alt="A project discussion connected to lived experiences" loading="lazy">
+            </figure>
+          </div>
+        </article>
+
+        <article class="process-slide" data-process-slide>
+          <div class="process-slide__copy">
+            <p class="process-slide__number">02</p>
+            <p class="process-slide__eyebrow">Shape</p>
+            <h4>Give complex realities a clear narrative without flattening them.</h4>
+            <p>Writing meant deciding what needed to be said, what required greater care, and what should remain quietly understood.</p>
+            <p class="process-slide__caption">Finding the language of the story.</p>
+          </div>
+          <div class="process-slide__mosaic process-slide__mosaic--shape">
+            <figure class="process-slide__image">
+              <img src="{{ '/assets/images/activities/kinh-van-hoa/process/shape-detail-01.webp' | relative_url }}" alt="Script development notes for Kinh Van Hoa" loading="lazy">
+            </figure>
+            <figure class="process-slide__image">
+              <img src="{{ '/assets/images/activities/kinh-van-hoa/process/shape-detail-02.webp' | relative_url }}" alt="Production team refining the Kinh Van Hoa story" loading="lazy">
+            </figure>
+            <figure class="process-slide__image process-slide__image--main">
+              <img src="{{ '/assets/images/activities/kinh-van-hoa/process/shape-main.webp' | relative_url }}" alt="Kinh Van Hoa scriptwriting and storyboard process" loading="lazy">
+            </figure>
+          </div>
+        </article>
+
+        <article class="process-slide" data-process-slide>
+          <div class="process-slide__copy">
+            <p class="process-slide__number">03</p>
+            <p class="process-slide__eyebrow">Frame</p>
+            <h4>Use every visual choice with intention.</h4>
+            <p>Directing was about more than capturing a scene. It was about deciding how the audience would enter, feel, and leave the story.</p>
+            <p class="process-slide__caption">Giving intention to every frame.</p>
+          </div>
+          <div class="process-slide__mosaic process-slide__mosaic--frame">
+            <figure class="process-slide__image process-slide__image--wide">
+              <img src="{{ '/assets/images/activities/kinh-van-hoa/process/frame-main.webp' | relative_url }}" alt="Directing a scene for the Kinh Van Hoa project" loading="lazy">
+            </figure>
+            <figure class="process-slide__image">
+              <img src="{{ '/assets/images/activities/kinh-van-hoa/process/frame-detail-01.webp' | relative_url }}" alt="Kinh Van Hoa filming setup" loading="lazy">
+            </figure>
+            <figure class="process-slide__image">
+              <img src="{{ '/assets/images/activities/kinh-van-hoa/process/frame-detail-02.webp' | relative_url }}" alt="Performers and production members on set" loading="lazy">
+            </figure>
+            <figure class="process-slide__image">
+              <img src="{{ '/assets/images/activities/kinh-van-hoa/process/frame-detail-03.webp' | relative_url }}" alt="A final visual frame from the Kinh Van Hoa project" loading="lazy">
+            </figure>
+          </div>
+        </article>
       </div>
+
+      <p class="process-carousel__closing">The process was not simply about producing a film. It was about learning how to hold someone else’s story with care.</p>
     </section>
 
     <section class="story-block story-block--media-left story-block--dark">
@@ -221,6 +279,26 @@
       <h2 id="activity-drawer-title">Sometimes showing up is already a form of care.</h2>
       <p class="drawer-story__lead">An annual Mid-Autumn volunteer initiative created for children and older adults living in care homes.</p>
     </header>
+
+    <section class="drawer-video-section drawer-video-section--highlight" data-youtube-section aria-labelledby="trung-thu-video-title">
+      <div class="drawer-video-section__heading">
+        <div>
+          <p class="story-kicker">A night we shared</p>
+          <h3 id="trung-thu-video-title">Mid-Autumn Volunteer Recap</h3>
+          <p>A few moments from a day built around preparation, shared laughter, and simply being present with one another.</p>
+        </div>
+      </div>
+      <div
+        class="youtube-embed youtube-embed--highlight"
+        data-youtube-embed
+        data-youtube-url="{{ site.activity_media.trung_thu_recap_youtube }}"
+        data-youtube-title="Trung thu cho em volunteer recap"
+      >
+        <img src="{{ '/assets/images/activities/trung-thu-cho-em/video-poster.webp' | relative_url }}" alt="Mid-Autumn volunteer recap video poster" loading="lazy">
+        <div><span aria-hidden="true">▶</span><strong>Play volunteer recap</strong></div>
+      </div>
+      <p class="drawer-video-section__caption">One day of preparation. One evening of shared attention. Many moments worth remembering.</p>
+    </section>
 
     <dl class="story-facts" aria-label="Trung thu cho em quick facts">
       <div><dt>Role</dt><dd>Volunteer</dd></div>

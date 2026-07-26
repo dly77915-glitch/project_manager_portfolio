@@ -24,7 +24,9 @@ author:
 # - https://www.youtube.com/watch?v=VIDEO_ID
 # - https://youtu.be/VIDEO_ID
 activity_media:
-  kinh_van_hoa_intro_youtube: ""
+  kinh_van_hoa_intro_youtube: "https://youtu.be/G970lpw-ohE"
+  # Paste the Trung thu cho em recap YouTube link here.
+  trung_thu_recap_youtube: "https://youtube.com/shorts/A1d6bEP_R2E?si=YGLXaajughzXRaaY"
 
 # Project case studies stored in _projects/*.md.
 collections:
